@@ -2,7 +2,7 @@
 <html lang="ru" ng-app="app">
 <head>
 	<meta charset="UTF-8">
-	<title>Standard App</title>
+	<title>Likearts</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
@@ -15,19 +15,38 @@
 			<md-content>
 				<md-toolbar>
 					<div class="md-toolbar-tools header">
-						<md-button class="md-icon-button" aria-label="header">
+						<md-button ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-icon-button" aria-label="header">
 							<md-icon md-font-set="material-icons">menu</md-icon>
 						</md-button>
 						<a href="/"><div class="logo"></div></a>
 						<span flex></span> 
 						<div class="header__links">
-							<md-button ng-href="/" class="">Главная</md-button>
-							<md-button ng-href="#">Блок</md-button>
+							<md-button ng-href="/">Главная</md-button>
+							<md-button ng-href="#">Блог</md-button>
 						</div> 
 					</div>
 				</md-toolbar>
 			</md-content>
+			  <section layout="row" flex>
+   				<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="menu">
+     				 <md-toolbar class="md-theme-light">
+       				 <h1 class="md-toolbar-tools header-menu">Likearts</h1>
+      			</md-toolbar>
+      			<md-divider></md-divider>
+      			<md-content>
+      				<md-button ng-href="/" class="header-menu__item">Главная</md-button>
+      				<md-button ng-href="#" class="header-menu__item">Блог</md-button>
+      			</md-content>
+    			</md-sidenav>
+  			</section>
 		</header>
+
+
+
+
+
+
+
 	</div> <!-- main container -->
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>

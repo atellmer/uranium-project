@@ -15,6 +15,13 @@ gulp.task('connect', function() {
 		});
 	});
 
+//js
+gulp.task('js', function() {
+	gulp.src('app/controllers/*')
+	.pipe(connect.reload());
+});
+
+
 //html
 gulp.task('html', function() {
 	gulp.src('app/*.html')
@@ -46,6 +53,7 @@ gulp.task('watch', function() {
 	gulp.watch('app/stylus/*.styl', ['styl']);
 	gulp.watch('app/css/*.css', ['css']);
 	gulp.watch('app/*.html', ['html']);
+	gulp.watch('app/controllers/*', ['js']);
 	});
 
-gulp.task('default', ['connect', 'html', 'styl', 'css', 'watch']);
+gulp.task('default', ['connect', 'js', 'html', 'styl', 'css', 'watch']);

@@ -23,13 +23,15 @@ a,
 a:focus {
   outline: none;
 }
-.header {
+.header,
+.header-menu {
   background: #673ab7;
   height: 64px;
   max-height: 64px;
 }
 @media screen and (max-width: 600px) {
-  .header {
+  .header,
+  .header-menu {
     height: 56px;
     max-height: 56px;
   }
@@ -74,4 +76,17 @@ a:focus {
   .header__links {
     display: none;
   }
+}
+.header-menu {
+  background-color: #fff;
+  color: #727272;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: default;
+}
+.header-menu__item {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  padding: 0 16px 0 16px;
 }
