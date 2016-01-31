@@ -32,8 +32,34 @@ $base-heihgt = 32px;
 body
 	background $bg-color
 	font-family 'Roboto'
-	
+	font-smoothing antialiased
+	overflow-scrolling touch
+
+a, a:focus
+	outline none
+
 .header
 	background $primary-color
-
+	height $base-heihgt * 2
+	max-height $base-heihgt * 2
+	@media screen and (max-width: 600px)
+		height ($base-heihgt * 2) - 8
+		max-height ($base-heihgt * 2) - 8
 	
+.logo
+	height 46.6666px
+	width 171.3333px
+	background-image url(../../img/logo.png)
+	background-size cover
+	background-repeat no-repeat
+	background-position center
+	@media screen and (max-width: 960px)
+		height 35px
+		width 128.5px
+	
+.header__links
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	@media screen and (max-width: 600px)
+		display none
