@@ -17,7 +17,7 @@ gulp.task('connect', function() {
 
 //js
 gulp.task('js', function() {
-	gulp.src('app/controllers/*')
+	gulp.src('app/js/*')
 	.pipe(connect.reload());
 });
 
@@ -53,7 +53,7 @@ gulp.task('watch', function() {
 	gulp.watch('app/stylus/*.styl', ['styl']);
 	gulp.watch('app/css/*.css', ['css']);
 	gulp.watch('app/*.html', ['html']);
-	gulp.watch('app/controllers/*', ['js']);
+	gulp.watch('app/js/*', ['js']);
 	});
 
 gulp.task('default', ['connect', 'js', 'html', 'styl', 'css', 'watch']);

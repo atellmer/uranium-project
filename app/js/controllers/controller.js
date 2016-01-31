@@ -1,14 +1,14 @@
-;(function(){
+;(function() {
 
 	'use strict';
 
 	var app = angular.module('app', ['ngMaterial']);
 
-  app.controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+  app.controller('NavBarCtrl', function ($scope, $timeout, $mdSidenav, $log) {
 
-    $scope.toggleRight = buildToggler('menu');
+    $scope.toggle = buildToggler('menu');
     
-    $scope.isOpenRight = function(){
+    $scope.isOpen = function(){
       return $mdSidenav('menu').isOpen();
     };
 
@@ -34,6 +34,7 @@
           });
       }, 200);
     }
+
     function buildToggler(navID) {
       return function() {
         $mdSidenav(navID)
@@ -43,10 +44,6 @@
           });
       }
     }
-  })
-
-
-
-
+  });
 
 })();

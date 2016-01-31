@@ -11,11 +11,11 @@
 </head>
 <body>
 	<div class="container-fluid"> <!-- main container -->
-		<header ng-controller="AppCtrl" ng-cloak class="md-whiteframe-4dp">
+		<header ng-controller="NavBarCtrl" ng-cloak class="md-whiteframe-4dp">
 			<md-content>
 				<md-toolbar>
 					<div class="md-toolbar-tools header">
-						<md-button ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-icon-button" aria-label="header">
+						<md-button ng-click="toggle()" ng-hide="isOpen()" class="md-icon-button" aria-label="header">
 							<md-icon md-font-set="material-icons">menu</md-icon>
 						</md-button>
 						<a href="/"><div class="logo"></div></a>
@@ -27,25 +27,19 @@
 					</div>
 				</md-toolbar>
 			</md-content>
-			  <section layout="row" flex>
-   				<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="menu">
-     				 <md-toolbar class="md-theme-light">
-       				 <h1 class="md-toolbar-tools header-menu">Likearts</h1>
-      			</md-toolbar>
-      			<md-divider></md-divider>
-      			<md-content>
-      				<md-button ng-href="/" class="header-menu__item">Главная</md-button>
-      				<md-button ng-href="#" class="header-menu__item">Блог</md-button>
-      			</md-content>
-    			</md-sidenav>
-  			</section>
+			 <section layout="row" flex>
+   			<md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="menu">
+     			<md-toolbar>
+       			<h1 class="md-toolbar-tools header-menu">Likearts</h1>
+      		</md-toolbar>
+      		<md-divider></md-divider>
+      		<md-content>
+      			<md-button ng-href="/" class="header-menu__item">Главная</md-button>
+      			<md-button ng-href="#" class="header-menu__item">Блог</md-button>
+      		</md-content>
+    		</md-sidenav>
+  		</section>
 		</header>
-
-
-
-
-
-
 
 	</div> <!-- main container -->
 
@@ -54,6 +48,7 @@
 <script src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="bower_components/angular-material/angular-material.min.js"></script>
-<script src="controllers/controller.js"></script>
+<script src="js/modules/main.js"></script>
+<script src="js/controllers/controller.js"></script>
 </body>
 </html>
