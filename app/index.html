@@ -6,12 +6,27 @@
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="css/production/bundle.min.css">
 </head>
 <body>
 	<div class="container-fluid"> <!-- main container -->
-		<header class="header">
-		</header>
+
+<header ng-controller="AppCtrl" ng-cloak>
+  <md-content>
+    <md-toolbar>
+      <div class="md-toolbar-tools header">
+        <md-button class="md-icon-button" aria-label="header">
+          <md-icon md-font-set="material-icons">menu</md-icon>
+        </md-button>
+        <span flex></span>   
+        <md-button ng-href="/" class="display-table-cell">Главная</md-button>
+       	<md-button ng-href="#">Блок</md-button>
+      </div>
+    </md-toolbar>
+  </md-content>
+</header>
+
 
 		
 	</div> <!-- main container -->
