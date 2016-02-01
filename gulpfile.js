@@ -47,7 +47,10 @@ gulp.task('styl', function () {
 
 //css
 gulp.task('css', function() {
-	return gulp.src(['client/css/fonts.css', 'client/css/*.css'])
+	return gulp.src([
+		'client/css/fonts.css', 
+		'client/css/main.css'
+	])
 	.pipe(concatCss("bundle.css"))
 	.pipe(minifyCSS())
 	.pipe(rename('css/dist/bundle.min.css'))
