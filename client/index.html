@@ -14,7 +14,7 @@
 			<md-content>
 				<md-toolbar>
 					<div class="md-toolbar-tools header">
-						<md-button ng-click="toggle()" ng-hide="isOpen()" class="md-icon-button" aria-label="header">
+						<md-button hm-tap="toggle()" ng-hide="isOpen()" class="md-icon-button" aria-label="header">
 							<md-icon md-font-set="material-icons">menu</md-icon>
 						</md-button>
 						<a href="/"><div class="logo"></div></a>
@@ -47,6 +47,8 @@
 <script src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/hammerjs/hammer.min.js"></script>
+<script src="bower_components/AngularHammer/angular.hammer.min.js"></script>
 <script src="app/dist/bundle.min.js"></script>
 </body>
 </html>

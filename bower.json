@@ -14,6 +14,7 @@
   "dependencies": {
     "bootstrap": "~3.3.6",
     "angular": "~1.4.8",
-    "angular-material": "~1.0.4"
+    "angular-material": "~1.0.4",
+    "AngularHammer": "ryanmullins-angular-hammer#~2.1.10"
   }
 }
