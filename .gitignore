@@ -1,4 +1,4 @@
 ﻿# folder dependencies for node.js
 node_modules/
 # folder dependencies for client
-app/bower_components/
+client/bower_components/

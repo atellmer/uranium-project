@@ -2,13 +2,17 @@
 
 	'use strict';
 
-	var app = angular.module('app', ['ngMaterial']);
+	angular
+    .module('app')
+    .controller('NavBarCtrl', NavBarCtrl);
 
-  app.controller('NavBarCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+  NavBarCtrl.$inject = ['$scope', '$timeout', '$mdSidenav'];
+
+  function NavBarCtrl($scope, $timeout, $mdSidenav) {
 
     $scope.toggle = buildToggler('menu');
     
-    $scope.isOpen = function(){
+    $scope.isOpen = function() {
       return $mdSidenav('menu').isOpen();
     };
 
@@ -28,22 +32,16 @@
     function buildDelayedToggler(navID) {
       return debounce(function() {
         $mdSidenav(navID)
-          .toggle()
-          .then(function () {
-            $log.debug("toggle " + navID + " is done");
-          });
+          .toggle();
       }, 200);
     }
 
     function buildToggler(navID) {
       return function() {
         $mdSidenav(navID)
-          .toggle()
-          .then(function () {
-            $log.debug("toggle " + navID + " is done");
-          });
+          .toggle();
       }
     }
-  });
-
+  }
+  
 })();

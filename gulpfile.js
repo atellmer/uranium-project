@@ -5,55 +5,59 @@ var gulp = require('gulp'),
 		rename = require('gulp-rename'),
 		livereload = require('gulp-livereload'),
 		connect = require('gulp-connect');
+		concat = require('gulp-concat');
+		uglify = require('gulp-uglify');
 
 //connect
 gulp.task('connect', function() {
 	connect.server({
-		root: 'app',
+		root: 'client',
 		 port: 3000,
 		livereload: true
 		});
 	});
 
 //js
-gulp.task('js', function() {
-	gulp.src('app/js/*')
+gulp.task('scripts', function() {
+	return gulp.src(['client/app/**/*.module.js', 'client/app/**/*.controller.js'])
+	.pipe(concat('bundle.min.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest('client/app/dist/'))
 	.pipe(connect.reload());
 });
 
-
 //html
 gulp.task('html', function() {
-	gulp.src('app/*.html')
+	return gulp.src('client/*.html')
 	.pipe(connect.reload());
 });
 
 
 //stylus
 gulp.task('styl', function () {
-   gulp.src('app/stylus/*.styl')
+   return gulp.src('client/stylus/*.styl')
     .pipe(stylus())
-    .pipe(gulp.dest('app/css/'))
+    .pipe(gulp.dest('client/css/'))
     .pipe(connect.reload());
 });
 
 
 //css
 gulp.task('css', function() {
-	return gulp.src('app/css/*.css')
+	return gulp.src('client/css/*.css')
 	.pipe(concatCss("bundle.css"))
 	.pipe(minifyCSS())
-	.pipe(rename('css/production/bundle.min.css'))
-	.pipe(gulp.dest('app/'))
+	.pipe(rename('css/dist/bundle.min.css'))
+	.pipe(gulp.dest('client/'))
 	.pipe(connect.reload());
 	});
 
 //watch
 gulp.task('watch', function() {
-	gulp.watch('app/stylus/*.styl', ['styl']);
-	gulp.watch('app/css/*.css', ['css']);
-	gulp.watch('app/*.html', ['html']);
-	gulp.watch('app/js/*', ['js']);
+	gulp.watch('client/stylus/*.styl', ['styl']);
+	gulp.watch('client/css/*.css', ['css']);
+	gulp.watch('client/*.html', ['html']);
+	gulp.watch('client/app/**/*.js', ['scripts']);
 	});
 
-gulp.task('default', ['connect', 'js', 'html', 'styl', 'css', 'watch']);
+gulp.task('default', ['connect', 'scripts', 'html', 'styl', 'css', 'watch']);
