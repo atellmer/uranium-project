@@ -9,6 +9,7 @@ $primary-text-color = #212121;
 $secondary-text-color = #727272;
 $divider-color = #B6B6B6;
 $bg-color = #FAFAFA;
+$text-color = rgba(0,0,0,0.87);
 
 //base height
 $base-heihgt = 32px;
@@ -35,8 +36,19 @@ body
 	font-smoothing antialiased
 	overflow-scrolling touch
 
-a, a:focus
+a, a:hover, a:active, a:focus
 	outline none
+	text-decoration none
+
+.header-fixed
+	position fixed
+	width 100%
+	
+.position-fixed
+	position fixed
+	
+.md-sidenav-backdrop
+	position fixed
 
 .header
 	background $primary-color
@@ -56,7 +68,7 @@ a, a:focus
 	@media screen and (max-width: 960px)
 		height 35px
 		width 128.5px
-	
+
 .header__links
 	display: flex;
 	align-items: center;
@@ -72,8 +84,55 @@ a, a:focus
 	letter-spacing 3px
 	cursor default
 	
+.header-menu__content
+	padding 8px 0 8px 0
+
 .header-menu__item
 	width 100%
 	margin 0
 	text-align left
-	padding 0 16px 0 16px
+	line-height 48px
+	min-height 48px
+	padding 0 20px 0 20px;
+	text-transform uppercase
+	font-weight 500
+	transition all .3s ease-in-out
+	color $text-color
+	overflow hidden
+	display flex
+	letter-spacing .010em
+	user-select: none;
+	
+.header-menu__item:hover
+	background-color rgba(0,0,0,0.075)
+	transition all .3s ease-in-out
+	
+.logo--black
+	background-image url(../../img/logo-black.png)
+	
+.social
+	padding 8px
+	display flex
+	flex-direction row
+	flex-wrap nowrap
+	justify-content center 
+	
+.social__btn
+	width 60px
+	height 60px
+	margin 8px
+	border-radius 100%
+	cursor pointer
+	
+.social__btn--vk
+	background-color blue
+	
+.social__btn--ok
+	background-color orange
+	
+.social__btn--fb
+	background-color green
+	
+.social__btn--tw
+	background-color purple
+

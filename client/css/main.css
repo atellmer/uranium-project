@@ -20,8 +20,21 @@ body {
   overflow-scrolling: touch;
 }
 a,
+a:hover,
+a:active,
 a:focus {
   outline: none;
+  text-decoration: none;
+}
+.header-fixed {
+  position: fixed;
+  width: 100%;
+}
+.position-fixed {
+  position: fixed;
+}
+.md-sidenav-backdrop {
+  position: fixed;
 }
 .header,
 .header-menu {
@@ -84,9 +97,92 @@ a:focus {
   letter-spacing: 3px;
   cursor: default;
 }
+.header-menu__content {
+  padding: 8px 0 8px 0;
+}
 .header-menu__item {
   width: 100%;
   margin: 0;
   text-align: left;
-  padding: 0 16px 0 16px;
+  line-height: 48px;
+  min-height: 48px;
+  padding: 0 20px 0 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: rgba(0,0,0,0.87);
+  overflow: hidden;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  letter-spacing: 0.01em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.header-menu__item:hover {
+  background-color: rgba(0,0,0,0.075);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.logo--black {
+  background-image: url("../../img/logo-black.png");
+}
+.social {
+  padding: 8px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -o-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-lines: single;
+  -moz-box-lines: single;
+  -o-box-lines: single;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.social__btn {
+  width: 60px;
+  height: 60px;
+  margin: 8px;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.social__btn--vk {
+  background-color: #00f;
+}
+.social__btn--ok {
+  background-color: #ffa500;
+}
+.social__btn--fb {
+  background-color: #008000;
+}
+.social__btn--tw {
+  background-color: #800080;
 }

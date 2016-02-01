@@ -2,6 +2,7 @@
 <html lang="ru" ng-app="app">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
 	<title>Likearts</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
@@ -10,7 +11,7 @@
 </head>
 <body>
 	<div class="container-fluid"> <!-- main container -->
-		<header ng-controller="NavBarCtrl" ng-cloak class="md-whiteframe-4dp">
+		<header ng-controller="NavBarCtrl" ng-cloak  md-whiteframe="4" class="header-fixed">
 			<md-content>
 				<md-toolbar>
 					<div class="md-toolbar-tools header">
@@ -26,19 +27,28 @@
 					</div>
 				</md-toolbar>
 			</md-content>
-			 <section layout="row" flex>
-   			<md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="menu">
+		</header>
+		 <section layout="row" flex>
+   			<md-sidenav class="md-sidenav-left position-fixed" md-component-id="menu" md-whiteframe="2">
      			<md-toolbar>
-       			<h1 class="md-toolbar-tools header-menu">Likearts</h1>
+       			<h1 class="md-toolbar-tools header-menu"><div class="logo logo--black"></div></h1>
       		</md-toolbar>
       		<md-divider></md-divider>
+      		<md-content class="header-menu__content">
+      			<a href="/"><div class="header-menu__item">Главная</div></a>
+      			<a href="#"><div class="header-menu__item">Блог</div></a>
+      		</md-content>
+      		<md-divider></md-divider>
       		<md-content>
-      			<md-button ng-href="/" class="header-menu__item">Главная</md-button>
-      			<md-button ng-href="#" class="header-menu__item">Блог</md-button>
+      			<div ng-controller="SocialCtrl" class="social">
+      				<div hm-tap="vk()" class="social__btn social__btn--vk"></div>
+      				<div hm-tap="ok()" class="social__btn social__btn--ok"></div>
+      				<div hm-tap="fb()" class="social__btn social__btn--fb"></div>
+      				<div hm-tap="tw()" class="social__btn social__btn--tw"></div>
+      			</div>
       		</md-content>
     		</md-sidenav>
   		</section>
-		</header>
 
 	</div> <!-- main container -->
 

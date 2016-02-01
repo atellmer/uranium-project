@@ -19,7 +19,10 @@ gulp.task('connect', function() {
 
 //js
 gulp.task('scripts', function() {
-	return gulp.src(['client/app/**/*.module.js', 'client/app/**/*.controller.js'])
+	return gulp.src([
+		'client/app/**/*.module.js', 
+		'client/app/**/*.controller.js'
+	])
 	.pipe(concat('bundle.min.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('client/app/dist/'))
