@@ -47,10 +47,7 @@ gulp.task('styl', function () {
 
 //css
 gulp.task('css', function() {
-	return gulp.src([
-		'client/css/fonts.css', 
-		'client/css/main.css'
-	])
+	return gulp.src('client/css/main.css')
 	.pipe(concatCss("bundle.css"))
 	.pipe(minifyCSS())
 	.pipe(rename('css/dist/bundle.min.css'))
@@ -63,7 +60,7 @@ gulp.task('watch', function() {
 	gulp.watch('client/stylus/*.styl', ['styl']);
 	gulp.watch('client/css/*.css', ['css']);
 	gulp.watch('client/*.html', ['html']);
-	gulp.watch('client/app/**/*.js', ['scripts']);
+	gulp.watch('client/app/**/*.*', ['scripts']);
 	});
 
 gulp.task('default', ['connect', 'scripts', 'html', 'styl', 'css', 'watch']);

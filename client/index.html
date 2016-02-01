@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/dist/bundle.min.css">
 </head>
 <body>
@@ -40,7 +41,7 @@
       		</md-content>
       		<md-divider></md-divider>
       		<md-content>
-      			<div ng-controller="SocialCtrl" class="social">
+      			<div ng-controller="SocialCtrl" ng-cloak class="social">
       				<div hm-tap="vk()" class="social__btn social__btn--vk"></div>
       				<div hm-tap="ok()" class="social__btn social__btn--ok"></div>
       				<div hm-tap="fb()" class="social__btn social__btn--fb"></div>
@@ -52,9 +53,8 @@
 
 		<div class="container">
 
-			<div ng-controller="BlogCtrl" class="row">
-			  
-					<div class="col-sm-6 col-md-4 no-padding" ng-repeat="card in cards">
+			<div ng-controller="PostsCtrl" ng-cloak class="row">  
+					<div ng-repeat="card in cards" class="col-sm-6 col-md-4 no-padding transition">
 				      <md-card md-whiteframe="2" class="card">
 				        <img ng-src="{{card.img}}" class="md-card-image" alt="{{card.alt}}">
 				        <md-card-title>
@@ -70,7 +70,6 @@
 				        </md-card-actions>
 				      </md-card> 
 					</div>
-
 		  </div>
 
 
