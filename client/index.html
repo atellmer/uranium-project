@@ -6,6 +6,7 @@
 	<title>Likearts</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="css/dist/bundle.min.css">
 </head>
 <body ng-cloak>
@@ -51,27 +52,24 @@
 
 		<div class="container">
 			<div ng-controller="PostsCtrl" class="row">  
-
 					<div ng-repeat="card in cards" class="col-sm-6 col-md-4 no-padding">
-
 				      <md-card class="paper-shadow-z1 card">
-				        <img ng-src="{{card.img}}" class="md-card-image" alt="{{card.alt}}">
+				        <img ng-src="{{::card.img}}" class="md-card-image" alt="{{::card.alt}}">
 				        <md-card-title>
 				          <md-card-title-text>
-				            <span class="md-headline">{{card.title}}</span>
+				            <span class="md-headline">{{::card.title}}</span>
 				          </md-card-title-text>
 				        </md-card-title>
 				        <md-card-content>
-				          <p class="card__anonce">{{card.anonce}}</p>
+				          <p class="card__anonce">{{::card.anonce}}</p>
 				        </md-card-content>
 				        <div class="card__action">
 				          <md-button md-no-ink class="md-primary">Подробнее</md-button>
 				        </div>
 				      </md-card> 
-
 					</div>
-
 		  </div>
+		  <div id="end-content"></div>
 		</div>
 
 	</div> <!-- main container -->
