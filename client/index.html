@@ -6,12 +6,11 @@
 	<title>Likearts</title>
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="css/dist/bundle.min.css">
 </head>
-<body>
+<body ng-cloak>
 	<div class="container-fluid"> <!-- main container -->
-		<header ng-controller="NavBarCtrl" ng-cloak  md-whiteframe="4" class="header-fixed">
+		<header ng-controller="NavBarCtrl" md-whiteframe="4" class="header-fixed">
 			<md-content>
 				<md-toolbar>
 					<div class="md-toolbar-tools header">
@@ -40,7 +39,7 @@
       		</md-content>
       		<md-divider></md-divider>
       		<md-content>
-      			<div ng-controller="SocialCtrl" ng-cloak class="social">
+      			<div ng-controller="SocialCtrl" class="social">
       				<div hm-tap="vk()" class="social__btn social__btn--vk"></div>
       				<div hm-tap="ok()" class="social__btn social__btn--ok"></div>
       				<div hm-tap="fb()" class="social__btn social__btn--fb"></div>
@@ -51,7 +50,7 @@
   		</section>
 
 		<div class="container">
-			<div ng-controller="PostsCtrl" ng-cloak class="row">  
+			<div ng-controller="PostsCtrl" class="row">  
 
 					<div ng-repeat="card in cards" class="col-sm-6 col-md-4 no-padding">
 
@@ -63,7 +62,7 @@
 				          </md-card-title-text>
 				        </md-card-title>
 				        <md-card-content>
-				          <p>{{card.anonce}}</p>
+				          <p class="card__anonce">{{card.anonce}}</p>
 				        </md-card-content>
 				        <div class="card__action">
 				          <md-button md-no-ink class="md-primary">Подробнее</md-button>

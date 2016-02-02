@@ -1,5 +1,6 @@
 @import '../../node_modules/nib/'
 @import '../fonts/fonts.css'
+@import '../fonts/material-icons.css'
 
 
 //material colors
@@ -36,6 +37,12 @@ $base-heihgt = 32px;
 .paper-shadow-z5
 	box-shadow 0 19px 60px rgba(0,0,0,0.3), 0 15px 20px rgba(0,0,0,0.22)
 	
+.line-clamp
+	overflow hidden
+	display -webkit-box
+	-webkit-line-clamp 10
+	-webkit-box-orient vertical
+	text-overflow: ellipsis;
 
 body
 	background $bg-color
@@ -189,3 +196,6 @@ a, a:hover, a:active, a:focus
 .md-primary
 	color $accent-color!important
 
+.card__anonce
+	max-height 13em
+	@extend .line-clamp
