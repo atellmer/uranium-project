@@ -1,4 +1,6 @@
 @import '../../node_modules/nib/'
+@import '../fonts/fonts.css'
+
 
 //material colors
 $dark-primary-color = #512DA8;
@@ -19,14 +21,24 @@ $base-heihgt = 32px;
 	padding 0
 	margin 0
 	
-.transition
-	transition all .5s ease-in-out
+.paper-shadow-z1
+	box-shadow 0 1px 6px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.12)
 	
-.container-fluid
-	padding 0
-	background $bg-color
+.paper-shadow-z2
+	box-shadow 0 3px 10px rgba(0,0,0,0.16), 0 3px 10px rgba(0,0,0,0.23)
+	
+.paper-shadow-z3
+	box-shadow 0 10px 30px rgba(0,0,0,0.19), 0 6px 10px rgba(0,0,0,0.23)
+	
+.paper-shadow-z4
+	box-shadow 0 14px 45px rgba(0,0,0,0.25), 0 10px 18px rgba(0,0,0,0.22)
+	
+.paper-shadow-z5
+	box-shadow 0 19px 60px rgba(0,0,0,0.3), 0 15px 20px rgba(0,0,0,0.22)
+	
 
 body
+	background $bg-color
 	font-family 'Roboto'
 	font-smoothing antialiased
 	overflow-scrolling touch
@@ -35,6 +47,10 @@ a, a:hover, a:active, a:focus
 	outline none
 	text-decoration none
 
+.container-fluid
+	background $bg-color
+	padding 0
+	
 .header-fixed
 	position fixed
 	width 100%
@@ -103,21 +119,21 @@ a, a:hover, a:active, a:focus
 	background-color rgba(0,0,0,0.075)
 	transition all .3s ease-in-out
 	
-.logo--black
+.logo--invert
 	background-image url(../../img/logo-black.png)
 	
 .social
-	padding 8px
+	padding 8px 0 8px 0
 	display flex
 	flex-direction row
 	flex-wrap nowrap
-	justify-content space-between 
+	justify-content space-around 
 	
 .social__btn
 	width 40px
 	height 40px
 	margin 8px
-	border-radius 100%
+	border-radius 50%
 	cursor pointer
 	background-size cover
 	background-repeat no-repeat
@@ -159,6 +175,16 @@ a, a:hover, a:active, a:focus
 	padding-top ($base-heihgt * 2) + 8
 	@media screen and (max-width: 600px)
 		padding-top ($base-heihgt * 2)
+		
+.card
+	display block
+	transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+	
+.card:hover
+	@extend .paper-shadow-z3
+	
+.card__action
+	padding 8px
 		
 .md-primary
 	color $accent-color!important
