@@ -20,10 +20,12 @@
 						</md-button>
 						<a href="/"><div class="logo"></div></a>
 						<span flex></span> 
-						<div class="header__links">
-							<md-button ng-href="/">Главная</md-button>
-							<md-button ng-href="#">Блог</md-button>
-						</div> 
+						<nav>
+							<div class="header__links">
+								<md-button ng-href="/#">Главная</md-button>
+								<md-button ng-href="/#">Блог</md-button>
+							</div> 
+						</nav>
 					</div>
 				</md-toolbar>
 			</md-content>
@@ -34,10 +36,18 @@
        			<h1 class="md-toolbar-tools header-menu"><div class="logo logo--invert"></div></h1>
       		</md-toolbar>
       		<md-divider></md-divider>
-      		<md-content class="header-menu__content">
-      			<a href="/"><div class="header-menu__item">Главная</div></a>
-      			<a href="#"><div class="header-menu__item">Блог</div></a>
-      		</md-content>
+      		<nav>
+						<md-list ng-controller="LinksCtrl">
+						  <md-list-item ng-click="goTo('/#')">
+						  	<a href="/!#"></a>
+						    <p>Главная</p>
+						  </md-list-item>
+						  <md-list-item ng-click="goTo('/#')">
+						  	<a href="/!#"></a>
+						    <p>Блог</p>
+						  </md-list-item>
+						</md-list>
+					</nav>
       		<md-divider></md-divider>
       		<md-content>
       			<div ng-controller="SocialCtrl" class="social">

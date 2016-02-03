@@ -123,50 +123,11 @@ a:focus {
   letter-spacing: 3px;
   cursor: default;
 }
-.header-menu__content {
-  padding: 8px 0 8px 0;
-}
-.header-menu__item {
-  width: 100%;
-  margin: 0;
-  text-align: left;
-  line-height: 48px;
-  min-height: 48px;
-  padding: 0 20px 0 20px;
-  text-transform: uppercase;
-  font-weight: 500;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  color: rgba(0,0,0,0.87);
-  overflow: hidden;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: box;
-  display: flex;
-  letter-spacing: 0.01em;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.header-menu__item:hover {
-  background-color: rgba(0,0,0,0.075);
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
 .logo--invert {
   background-image: url("../../img/logo-black.png");
 }
 .social {
-  padding: 8px 0 8px 0;
+  padding: 8px;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -185,12 +146,12 @@ a:focus {
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -webkit-box-pack: distribute;
-  -moz-box-pack: distribute;
-  -o-box-pack: distribute;
-  -ms-flex-pack: distribute;
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -o-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 .social__btn {
   width: 40px;
