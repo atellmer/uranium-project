@@ -15,9 +15,10 @@
 			<md-content>
 				<md-toolbar>
 					<div class="md-toolbar-tools header">
-						<md-button hm-tap="toggle()" ng-hide="isOpen()" class="md-icon-button" aria-label="header">
+						<md-button ng-click="toggle()" ng-hide="isOpen()" class="md-icon-button" aria-label="header">
 							<md-icon md-font-set="material-icons">menu</md-icon>
 						</md-button>
+
 						<a href="/"><div class="logo"></div></a>
 						<span flex></span> 
 						<nav>
@@ -59,10 +60,9 @@
       		</md-content>
     		</md-sidenav>
   		</section>
-
 		<div class="container">
 			<div ng-controller="PostsCtrl" class="row">  
-					<div ng-repeat="card in cards" class="col-sm-6 col-md-4 no-padding">
+					<div ng-repeat="card in cards track by card.id" class="col-sm-6 col-md-4 no-padding">
 				      <md-card class="paper-shadow-z1 card">
 				        <img ng-src="{{::card.img}}" class="md-card-image" alt="{{::card.alt}}">
 				        <md-card-title>

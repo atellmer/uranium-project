@@ -38,6 +38,5 @@
         $timeout(loadMoreItems, 0);
       }
     }
-
   }
 })();
