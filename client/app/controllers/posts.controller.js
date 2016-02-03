@@ -35,7 +35,7 @@
       end = angular.element('#end-content').offset().top;
 
       if(position >= end) {
-        $timeout(loadMoreItems, 0);
+        $scope.$apply(loadMoreItems);
       }
     }
   }
