@@ -12,7 +12,8 @@
   box-shadow: 0 3px 10px rgba(0,0,0,0.16), 0 3px 10px rgba(0,0,0,0.23);
 }
 .paper-shadow-z3,
-.card:hover {
+.card:hover,
+.fab:hover {
   -webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.19), 0 6px 10px rgba(0,0,0,0.23);
   box-shadow: 0 10px 30px rgba(0,0,0,0.19), 0 6px 10px rgba(0,0,0,0.23);
 }
@@ -253,4 +254,15 @@ menu__item:active {
   opacity: 1;
   -ms-filter: none;
   filter: none;
+}
+.fab-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.fab {
+  background-color: #ff4081;
+}
+.fab-mini-icon {
+  color: #727272 !important;
 }

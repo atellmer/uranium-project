@@ -67,6 +67,28 @@
 			<div ui-view class="container">
 				
 			</div>
+
+		<div ng-controller="FABCtrl as vm" class="fab-container">
+		 <md-fab-speed-dial md-open="vm.isOpen" 
+		 										md-direction="{{vm.selectedDirection}}" 
+		 										ng-mouseenter="vm.isOpen=true" 
+		 										ng-mouseleave="vm.isOpen=false"
+		 										ng-class="vm.selectedMode">
+        <md-fab-trigger>
+          <md-button aria-label="menu" class="md-fab fab">
+          	<md-icon md-font-set="material-icons">add</md-icon>
+          </md-button>
+        </md-fab-trigger>
+        <md-fab-actions>
+          <md-button aria-label="Наверх" class="md-fab md-raised md-mini">
+           <md-icon md-font-set="material-icons fab-mini-icon">create</md-icon>
+          </md-button>
+          <md-button ng-click="moveUp()" aria-label="Заказать" class="md-fab md-raised md-mini">
+            <md-icon md-font-set="material-icons fab-mini-icon">arrow_upward</md-icon>
+          </md-button>
+        </md-fab-actions>
+      </md-fab-speed-dial>
+    </div>
 	
 
 	</div> <!-- main container -->
