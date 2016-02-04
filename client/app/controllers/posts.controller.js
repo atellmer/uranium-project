@@ -10,13 +10,19 @@
   function PostsCtrl($scope, $http, $timeout, $window) {
     var cash,
         last,
-        delta = 3,
+        delta,
         initial = 6,
         path = '../app/models/posts.model.json';
 
     $http.get(path).success(function(response) {
+      last = 0;
+      delta = 3;
+      cash = {};
+      $scope.cards = {};
+
       cash = response;
-      $scope.cards = response.slice(0, initial);
+
+      $scope.cards = cash.slice(0, initial);
       last = delta;
     });
 
@@ -24,7 +30,9 @@
 
     function loadMoreItems() {
       delta += last;
-      $scope.cards = cash.slice(last, delta);
+      if(cash) {
+        $scope.cards = cash.slice(last, delta);
+      }
     }
 
     function scrollHandler() {
