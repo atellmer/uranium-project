@@ -1,7 +1,7 @@
 ;(function() {
 	'use strict';
 	angular
-		.module('app', ['ngMaterial', 'hmTouchEvents']);
+		.module('app', ['ui.router', 'ngMaterial', 'hmTouchEvents']);
 })();
 
 

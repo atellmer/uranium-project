@@ -126,6 +126,12 @@ a:focus {
 .logo--invert {
   background-image: url("../../img/logo-black.png");
 }
+.menu__item,
+menu__item:hover,
+menu__item:focus,
+menu__item:active {
+  color: #212121 !important;
+}
 .social {
   padding: 8px;
   display: -webkit-box;

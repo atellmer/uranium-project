@@ -21,6 +21,7 @@ gulp.task('connect', function() {
 gulp.task('scripts', function() {
 	return gulp.src([
 		'client/app/**/*.module.js', 
+		'client/app/**/*.config.js',
 		'client/app/**/*.controller.js'
 	])
 	.pipe(concat('bundle.min.js'))

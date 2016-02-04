@@ -24,8 +24,8 @@
 						<span flex></span> 
 						<nav>
 							<div class="header__links">
-								<md-button aria-haspopup="true" ng-href="/#">Главная</md-button>
-								<md-button aria-haspopup="true" ng-href="/#">Блог</md-button>
+								<md-button aria-haspopup="true" ui-sref="root">Главная</md-button>
+								<md-button aria-haspopup="true" ui-sref="blog">Блог</md-button>
 							</div> 
 						</nav>
 					</div>
@@ -40,14 +40,16 @@
       		<md-divider></md-divider>
       		<nav>
 						<md-list ng-controller="LinksCtrl">
-						  <md-list-item aria-haspopup="true" ng-click="goTo('/#')">
-						  	<a href="/!#"></a>
-						    <p>Главная</p>
-						  </md-list-item>
-						  <md-list-item aria-haspopup="true" ng-click="goTo('/#')">
-						  	<a href="/!#"></a>
+							<a ui-sref="root" class="menu__item">
+							  <md-list-item aria-haspopup="true" ng-click="goTo()">
+							    <p>Главная</p>
+							  </md-list-item>
+							</a>
+							<a ui-sref="blog" class="menu__item">
+						  <md-list-item aria-haspopup="true" ng-click="goTo()">
 						    <p>Блог</p>
 						  </md-list-item>
+						  </a>
 						</md-list>
 					</nav>
       		<md-divider></md-divider>
@@ -61,17 +63,18 @@
       		</md-content>
     		</md-sidenav>
   		</section>
-		<div class="container" ng-controller="TemplateCtrl">
-			<div class="template" ng-include="template.url">	
+
+			<div ui-view class="container">
+				
 			</div>
-		</div>
+	
 
 	</div> <!-- main container -->
 </div>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/angular-route/angular-route.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="bower_components/angular-material/angular-material.min.js"></script>

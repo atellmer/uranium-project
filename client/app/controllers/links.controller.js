@@ -9,12 +9,12 @@
 
   function LinksCtrl($scope) {
 
-  	$scope.goTo = function(path) {
-  		return goTo(path);
+  	$scope.goTo = function() {
+  		return goTo();
   	}
 
-  	function goTo(path) {
-  		document.location.href = path;
+  	function goTo() {
+  		return false
   	}
 
   }
