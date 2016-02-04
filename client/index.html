@@ -24,8 +24,8 @@
 						<span flex></span> 
 						<nav>
 							<div class="header__links">
-								<md-button ng-href="/#">Главная</md-button>
-								<md-button ng-href="/#">Блог</md-button>
+								<md-button aria-haspopup="true" ng-href="/#">Главная</md-button>
+								<md-button aria-haspopup="true" ng-href="/#">Блог</md-button>
 							</div> 
 						</nav>
 					</div>
@@ -40,11 +40,11 @@
       		<md-divider></md-divider>
       		<nav>
 						<md-list ng-controller="LinksCtrl">
-						  <md-list-item ng-click="goTo('/#')">
+						  <md-list-item aria-haspopup="true" ng-click="goTo('/#')">
 						  	<a href="/!#"></a>
 						    <p>Главная</p>
 						  </md-list-item>
-						  <md-list-item ng-click="goTo('/#')">
+						  <md-list-item aria-haspopup="true" ng-click="goTo('/#')">
 						  	<a href="/!#"></a>
 						    <p>Блог</p>
 						  </md-list-item>
@@ -53,34 +53,17 @@
       		<md-divider></md-divider>
       		<md-content>
       			<div ng-controller="SocialCtrl" class="social">
-      				<div hm-tap="vk()" class="social__btn social__btn--vk"></div>
-      				<div hm-tap="ok()" class="social__btn social__btn--ok"></div>
-      				<div hm-tap="fb()" class="social__btn social__btn--fb"></div>
-      				<div hm-tap="tw()" class="social__btn social__btn--tw"></div>
+      				<div aria-haspopup="true" hm-tap="vk()" class="social__btn social__btn--vk"></div>
+      				<div aria-haspopup="true" hm-tap="ok()" class="social__btn social__btn--ok"></div>
+      				<div aria-haspopup="true" hm-tap="fb()" class="social__btn social__btn--fb"></div>
+      				<div aria-haspopup="true" hm-tap="tw()" class="social__btn social__btn--tw"></div>
       			</div>
       		</md-content>
     		</md-sidenav>
   		</section>
-		<div class="container">
-			<div ng-controller="PostsCtrl" class="row">  
-					<div ng-repeat="card in cards track by card.id" class="col-sm-6 col-md-4 no-padding">
-				      <md-card class="paper-shadow-z1 card">
-				        <img ng-src="{{::card.img}}" class="md-card-image" alt="{{::card.alt}}">
-				        <md-card-title>
-				          <md-card-title-text>
-				            <span class="md-headline">{{::card.title}}</span>
-				          </md-card-title-text>
-				        </md-card-title>
-				        <md-card-content>
-				          <p class="card__anonce">{{::card.anonce}}</p>
-				        </md-card-content>
-				        <div class="card__action">
-				          <md-button md-no-ink class="md-primary">Подробнее</md-button>
-				        </div>
-				      </md-card> 
-					</div>
-		  </div>
-		  <div id="end-content"></div>
+		<div class="container" ng-controller="TemplateCtrl">
+			<div class="template" ng-include="template.url">	
+			</div>
 		</div>
 
 	</div> <!-- main container -->
@@ -88,6 +71,7 @@
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
 <script src="bower_components/angular-animate/angular-animate.min.js"></script>
 <script src="bower_components/angular-aria/angular-aria.min.js"></script>
 <script src="bower_components/angular-material/angular-material.min.js"></script>
