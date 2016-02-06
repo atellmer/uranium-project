@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru" ng-app="app">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
@@ -9,99 +10,102 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="css/dist/bundle.min.css">
 </head>
-<body ng-cloak ng-controller="LoadCtrl">
-<div class="wrapper" ng-class="{smoothOpacity:onload}">
-	<div class="container-fluid"> <!-- main container -->
-		<header ng-controller="NavBarCtrl" md-whiteframe="4" class="header-fixed">
-			<md-content>
-				<md-toolbar>
-					<div class="md-toolbar-tools header">
-						<md-button ng-click="toggle()" ng-hide="isOpen()" class="md-icon-button" aria-label="header">
-							<md-icon md-font-set="material-icons">menu</md-icon>
-						</md-button>
 
-						<a href="/"><div class="logo"></div></a>
-						<span flex></span> 
-						<nav>
-							<div class="header__links">
-								<md-button aria-haspopup="true" ui-sref="root">Главная</md-button>
-								<md-button aria-haspopup="true" ui-sref="blog">Блог</md-button>
-							</div> 
-						</nav>
-					</div>
-				</md-toolbar>
-			</md-content>
-		</header>
-		 <section layout="row" flex>
-   			<md-sidenav class="md-sidenav-left position-fixed" md-component-id="menu" md-whiteframe="2">
-     			<md-toolbar>
-       			<h1 class="md-toolbar-tools header-menu"><div class="logo logo--invert"></div></h1>
-      		</md-toolbar>
-      		<md-divider></md-divider>
-      		<nav>
+<body ng-cloak ng-controller="LoadCtrl">
+	<div class="wrapper" ng-class="{'smoothOpacity':onload}">
+		<div class="container-fluid">
+			<!-- main container -->
+			<header ng-controller="NavBarCtrl" md-whiteframe="4" class="header-fixed">
+				<md-content>
+					<md-toolbar>
+						<div class="md-toolbar-tools header">
+							<md-button ng-click="toggle()" ng-hide="isOpen()" class="md-icon-button" aria-label="header">
+								<md-icon md-font-set="material-icons">menu</md-icon>
+							</md-button>
+
+							<a href="/">
+								<div class="logo"></div>
+							</a>
+							<span flex></span>
+							<nav>
+								<div class="header__links">
+									<md-button aria-haspopup="true" ui-sref="root">Главная</md-button>
+									<md-button aria-haspopup="true" ui-sref="blog">Блог</md-button>
+								</div>
+							</nav>
+						</div>
+					</md-toolbar>
+				</md-content>
+			</header>
+			<section layout="row" flex>
+				<md-sidenav class="md-sidenav-left position-fixed" md-component-id="menu" md-whiteframe="2">
+					<md-toolbar>
+						<h1 class="md-toolbar-tools header-menu"><div class="logo logo--invert"></div></h1>
+					</md-toolbar>
+
+					<md-divider></md-divider>
+					<nav>
 						<md-list ng-controller="LinksCtrl">
 							<a ui-sref="root" class="menu__item">
-							  <md-list-item aria-haspopup="true" ng-click="goTo()">
-							    <p>Главная</p>
-							  </md-list-item>
+								<md-list-item aria-haspopup="true" ng-click="goTo()">
+									<p>Главная</p>
+								</md-list-item>
 							</a>
 							<a ui-sref="blog" class="menu__item">
-						  <md-list-item aria-haspopup="true" ng-click="goTo()">
-						    <p>Блог</p>
-						  </md-list-item>
-						  </a>
+								<md-list-item aria-haspopup="true" ng-click="goTo()">
+									<p>Блог</p>
+								</md-list-item>
+							</a>
 						</md-list>
 					</nav>
-      		<md-divider></md-divider>
-      		<md-content>
-      			<div ng-controller="SocialCtrl" class="social">
-      				<div aria-haspopup="true" hm-tap="vk()" class="social__btn social__btn--vk"></div>
-      				<div aria-haspopup="true" hm-tap="ok()" class="social__btn social__btn--ok"></div>
-      				<div aria-haspopup="true" hm-tap="fb()" class="social__btn social__btn--fb"></div>
-      				<div aria-haspopup="true" hm-tap="tw()" class="social__btn social__btn--tw"></div>
-      			</div>
-      		</md-content>
-    		</md-sidenav>
-  		</section>
+					<md-divider></md-divider>
+					<md-content>
+						<div ng-controller="SocialCtrl" class="social">
+							<div aria-haspopup="true" hm-tap="vk()" class="social__btn social__btn--vk"></div>
+							<div aria-haspopup="true" hm-tap="ok()" class="social__btn social__btn--ok"></div>
+							<div aria-haspopup="true" hm-tap="fb()" class="social__btn social__btn--fb"></div>
+							<div aria-haspopup="true" hm-tap="tw()" class="social__btn social__btn--tw"></div>
+						</div>
+					</md-content>
+				</md-sidenav>
+			</section>
 
 			<div ui-view class="container">
-				
+
 			</div>
 
-		<div ng-controller="FABCtrl as vm" class="fab-container">
-		 <md-fab-speed-dial md-open="vm.isOpen" 
-		 										md-direction="{{vm.selectedDirection}}" 
-		 										ng-mouseenter="vm.isOpen=true" 
-		 										ng-mouseleave="vm.isOpen=false"
-		 										ng-class="vm.selectedMode">
-        <md-fab-trigger>
-          <md-button aria-label="menu" class="md-fab fab">
-          	<md-icon md-font-set="material-icons">add</md-icon>
-          </md-button>
-        </md-fab-trigger>
-        <md-fab-actions>
-          <md-button aria-label="Наверх" class="md-fab md-raised md-mini">
-           <md-icon md-font-set="material-icons fab-mini-icon">create</md-icon>
-          </md-button>
-          <md-button ng-click="moveUp()" aria-label="Заказать" class="md-fab md-raised md-mini">
-            <md-icon md-font-set="material-icons fab-mini-icon">arrow_upward</md-icon>
-          </md-button>
-        </md-fab-actions>
-      </md-fab-speed-dial>
-    </div>
-	
+			<div ng-controller="FABCtrl as vm" class="fab-container">
+				<md-fab-speed-dial md-open="vm.isOpen" md-direction="{{vm.selectedDirection}}" ng-mouseenter="vm.isOpen=true" ng-mouseleave="vm.isOpen=false" ng-class="vm.selectedMode">
+					<md-fab-trigger>
+						<md-button aria-label="menu" class="md-fab fab">
+							<md-icon ng-class="{'fab-icon-hover':vm.isOpen}" md-font-set="material-icons fab-icon">add</md-icon>
+						</md-button>
+					</md-fab-trigger>
+					<md-fab-actions>
+						<md-button ng-class="{'paper-shadow-z1':vm.isOpen}" aria-label="Наверх" class="md-fab md-raised md-mini fab-mini">
+							<md-icon md-font-set="material-icons fab-mini-icon">create</md-icon>
+						</md-button>
+						<md-button ng-click="moveUp()" ng-class="{'paper-shadow-z1':vm.isOpen}" aria-label="Заказать" class="md-fab md-raised md-mini">
+							<md-icon md-font-set="material-icons fab-mini-icon">arrow_upward</md-icon>
+						</md-button>
+					</md-fab-actions>
+				</md-fab-speed-dial>
+			</div>
 
-	</div> <!-- main container -->
-</div>
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-<script src="bower_components/angular-animate/angular-animate.min.js"></script>
-<script src="bower_components/angular-aria/angular-aria.min.js"></script>
-<script src="bower_components/angular-material/angular-material.min.js"></script>
-<script src="bower_components/hammerjs/hammer.min.js"></script>
-<script src="bower_components/AngularHammer/angular.hammer.min.js"></script>
-<script src="app/dist/bundle.min.js"></script>
+		</div>
+		<!-- main container -->
+	</div>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="bower_components/angular-material/angular-material.min.js"></script>
+	<script src="bower_components/hammerjs/hammer.min.js"></script>
+	<script src="bower_components/AngularHammer/angular.hammer.min.js"></script>
+	<script src="app/dist/bundle.min.js"></script>
 </body>
+
 </html>

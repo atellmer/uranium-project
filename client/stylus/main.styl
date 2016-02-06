@@ -22,32 +22,33 @@ $base-heihgt = 32px;
 	margin 0
 	
 .paper-shadow-z1
-	box-shadow 0 1px 6px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.12)
+	box-shadow 0 1px 6px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.12)!important
 	
 .paper-shadow-z2
-	box-shadow 0 3px 10px rgba(0,0,0,0.16), 0 3px 10px rgba(0,0,0,0.23)
+	box-shadow 0 3px 10px rgba(0,0,0,0.16), 0 3px 10px rgba(0,0,0,0.23)!important
 	
 .paper-shadow-z3
-	box-shadow 0 10px 30px rgba(0,0,0,0.19), 0 6px 10px rgba(0,0,0,0.23)
+	box-shadow 0 10px 30px rgba(0,0,0,0.19), 0 6px 10px rgba(0,0,0,0.23)!important
 	
 .paper-shadow-z4
-	box-shadow 0 14px 45px rgba(0,0,0,0.25), 0 10px 18px rgba(0,0,0,0.22)
+	box-shadow 0 14px 45px rgba(0,0,0,0.25), 0 10px 18px rgba(0,0,0,0.22)!important
 	
 .paper-shadow-z5
-	box-shadow 0 19px 60px rgba(0,0,0,0.3), 0 15px 20px rgba(0,0,0,0.22)
+	box-shadow 0 19px 60px rgba(0,0,0,0.3), 0 15px 20px rgba(0,0,0,0.22)!important
 	
 .line-clamp
 	overflow hidden
 	display -webkit-box
 	-webkit-line-clamp 10
 	-webkit-box-orient vertical
-	text-overflow: ellipsis;
-
+	text-overflow ellipsis
+    
 body
 	background $bg-color
 	font-family 'Roboto'
 	font-smoothing antialiased
 	overflow-scrolling touch
+	overflow-y scroll
 
 a, a:hover, a:active, a:focus
 	outline none
@@ -124,36 +125,22 @@ a, a:hover, a:active, a:focus
 	background-size cover
 	background-repeat no-repeat
 	background-position center
-	transition all .3s ease-in-out
 	
 .social__btn:hover
 	background-size cover
 	background-repeat no-repeat
 	background-position center
-	transition all .3s ease-in-out
 	
 .social__btn--vk
-	background-image url(../../img/social/vk-b.png)
-
-.social__btn--vk:hover
 	background-image url(../../img/social/vk.png)
 	
 .social__btn--ok
-	background-image url(../../img/social/ok-b.png)
-	
-.social__btn--ok:hover
 	background-image url(../../img/social/ok.png)
 	
 .social__btn--fb
-	background-image url(../../img/social/fb-b.png)
-	
-.social__btn--fb:hover
 	background-image url(../../img/social/fb.png)
 	
 .social__btn--tw
-	background-image url(../../img/social/tw-b.png)
-	
-.social__btn--tw:hover
 	background-image url(../../img/social/tw.png)
 
 .container
@@ -190,15 +177,42 @@ a, a:hover, a:active, a:focus
 	position fixed
 	bottom 20px
 	right 20px
+	@media screen and (max-width: 600px)
+		bottom 10px
+		right 10px
+	
+.fab-rotate
+	transform rotate(45deg)
 
 .fab
 	background-color $accent-color
 	
 .fab:hover
-	@extend .paper-shadow-z3
+	@extend .paper-shadow-z1
 	
+.fab-icon
+	transition all .2s ease-in-out
+	
+.fab-icon-hover
+	@extend .fab-rotate
+	transition all .2s ease-in-out
+		
 .fab-mini-icon
 	color $secondary-text-color!important
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	
 	
 	
