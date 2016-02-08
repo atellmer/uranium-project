@@ -1,9 +1,6 @@
-;(function() {
+;
+(function () {
 	'use strict';
 	angular
-		.module('app', ['ui.router', 'ngMaterial', 'hmTouchEvents']);
+		.module('app', ['ui.router', 'ngMaterial', 'hmTouchEvents', 'ngSanitize']);
 })();
-
-
-
-

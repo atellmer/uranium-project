@@ -1,5 +1,7 @@
 <div ng-controller="PostCtrl">
-	<h1>Hello! i am a post with id = {{::post.id}}!</h1>
+	<div class="cover-post" style="background-image: url(http://lorempixel.com/1000/550/cats/);">
+		<h1 class="md-display-3 cover-post__title">{{::post.title}} # {{::post.id}}</h1>
+	</div>
+	<div ng-bind-html="post.detail" class="container no-padding post-content"></div>
 </div>
-
 <div id="end-content"></div>
