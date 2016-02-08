@@ -1,26 +1,29 @@
-;(function() {
+;
+(function () {
 	'use strict';
 
 	angular
-  .module('app')
-  .controller('FABCtrl', FABCtrl);
+		.module('app')
+		.controller('FABCtrl', FABCtrl);
 
-  FABCtrl.$inject = ['$scope'];
+	FABCtrl.$inject = ['$scope'];
 
-  function FABCtrl($scope) {
-    this.isOpen = false;
-    this.selectedMode = 'md-fling';
-    this.selectedDirection = 'up';
-    this.hover = false;
+	function FABCtrl($scope) {
+		this.isOpen = false;
+		this.selectedMode = 'md-fling';
+		this.selectedDirection = 'up';
+		this.hover = false;
 
-    $scope.moveUp = function() {
-      return moveUp();
-    }
+		$scope.moveUp = function () {
+			return moveUp();
+		}
 
-    function moveUp() {
-      angular.element("body,html").animate({scrollTop:0}, 800);
-    }
-  }
+		function moveUp() {
+			angular.element("body,html").animate({
+				scrollTop: 0
+			}, 500);
+		}
+	}
 
 
- })();
+})();

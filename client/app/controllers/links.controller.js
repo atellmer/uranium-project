@@ -1,22 +1,23 @@
-;(function() {
+;
+(function () {
 	'use strict';
 
 	angular
-  .module('app')
-  .controller('LinksCtrl', LinksCtrl);
+		.module('app')
+		.controller('LinksCtrl', LinksCtrl);
 
-  LinksCtrl.$inject = ['$scope'];
+	LinksCtrl.$inject = ['$scope'];
 
-  function LinksCtrl($scope) {
+	function LinksCtrl($scope) {
 
-  	$scope.goTo = function() {
-  		return goTo();
-  	}
+		$scope.goTo = function () {
+			return goTo();
+		}
 
-  	function goTo() {
-  		return false
-  	}
+		function goTo() {
+			return false
+		}
 
-  }
+	}
 
 })();
