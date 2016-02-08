@@ -255,14 +255,82 @@ a, a:hover, a:active, a:focus
 .post-content p
 	margin-bottom 25px
 	
+.cover-landing
+	display flex
+	flex-direction row
+	flex-wrap wrap
+	justify-content center
+	align-items center
+	align-content center 
+	width 100%;
+	min-height 700px;
+	height auto
+	margin-top ($base-height * 2)
+	background-image url(/img/landing/1.jpg)
+	background-position center
+	background-repeat no-repeat
+	background-size cover
+	transition height .2s ease-in-out
+	@media screen and (max-width: 600px)
+		margin-top ($base-height * 2) - 8
+		min-height 300px
+		height auto
 
-
+.cover-landing::after
+	content ''
+	width 100%;
+	min-height 700px;
+	height auto
+	position absolute
+	top 0
+	left 0
+	background-image linear-gradient(360deg, #3F51B5, #00BCD4)
+	opacity 0.95
+	margin-top ($base-height * 2)
+	transition height .2s ease-in-out
+	@media screen and (max-width: 600px)
+		margin-top ($base-height * 2) - 8
+		min-height 300px
+		height auto
+	
+.cover-landing__title
+	flex 0 100%
+	z-index 1
+	color #FFF
+	text-transform uppercase
+	font-weight 300
+	text-shadow 0 0 0.5px #777
+	margin 0
+	padding 10px 30px 10px 30px
+	text-align center
+	@media screen and (max-width: 600px)
+		font-size 1.4em
+		text-shadow none
     
+.cover-landing__accent-text
+	color $accent-color
+   
+.cover-landing__title-second
+	flex 0 100%
+	z-index 1
+	color #FFF
+	font-weight 300
+	text-shadow 0 0 0.5px #777
+	text-align center
+	margin 0
+	padding 10px 30px 10px 30px
+	font-size 1.8em
+	@media screen and (max-width: 600px)
+		display none
     
-    
-    
-    
-    
+.cover-landing__btn
+	z-index 1
+	margin-top 30px
+	padding 10px 60px 10px 60px
+	color #FFF!important
+	background #EC407A!important
+	@media screen and (max-width: 600px)
+		padding 8px 12px 8px 12px
     
     
     
