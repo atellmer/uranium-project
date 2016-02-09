@@ -12,6 +12,10 @@
 		var id = $stateParams.id,
 			path = '../app/models/posts.model.json';
 
+		$scope.goBack = function () {
+			return goBack();
+		}
+
 
 		$http.get(path).success(function (response) {
 
@@ -23,6 +27,10 @@
 				console.log('не найден пост');
 			}
 		});
+
+		function goBack() {
+			history.back();
+		}
 
 	}
 

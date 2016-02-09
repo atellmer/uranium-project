@@ -1,0 +1,31 @@
+<md-dialog ng-controller="PhoneDialogCtrl" aria-label="Заказать звонок">
+	<form>
+		<md-toolbar>
+			<div class="md-toolbar-tools dialog-toolbar">
+				<h2 class="dialog-toolbar__title">Заказать звонок</h2>
+				<span flex></span>
+				<md-button class="md-icon-button" hm-tap="cancel()">
+					<md-icon class="dialog-toolbar__icon" md-font-set="material-icons">close</md-icon>
+				</md-button>
+			</div>
+		</md-toolbar>
+		<md-dialog-content class="dialog-content">
+			<div>
+				<md-input-container class="md-block">
+					<label>Имя</label>
+					<input ng-model="user.name">
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>Телефон</label>
+					<input ng-model="user.phone">
+				</md-input-container>
+			</div>
+		</md-dialog-content>
+		<md-dialog-actions layout="row">
+			<span flex></span>
+			<md-button hm-tap="send()" class="md-primary md-hue-1">
+				Отправить
+			</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>

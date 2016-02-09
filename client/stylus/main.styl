@@ -42,13 +42,15 @@ $base-height = 32px;
 	-webkit-line-clamp 10
 	-webkit-box-orient vertical
 	text-overflow ellipsis
-    
+  
+html
+	overflow-y scroll
+	
 body
 	background $bg-color
 	font-family 'Roboto'
 	font-smoothing antialiased
 	overflow-scrolling touch
-	overflow-y scroll
 
 a, a:hover, a:active, a:focus
 	outline none
@@ -332,9 +334,36 @@ a, a:hover, a:active, a:focus
 	@media screen and (max-width: 600px)
 		padding 8px 12px 8px 12px
     
+.btn-back
+	position absolute
+	top 20px
+	left 0
+	z-index 1
     
-    
-    
+.btn-back__icon
+	color #FFF
+
+.header__phone
+	border-bottom 1px dashed #FFF
+	
+.dialog-toolbar
+	background-color #FFF
+	padding 24px
+	
+.dialog-toolbar h2
+	@media screen and (max-width: 600px)
+		font-size 0.8em
+	
+.dialog-toolbar__title
+	color $primary-text-color
+	
+.dialog-toolbar__icon
+	color $divider-color!important
+	
+.dialog-content
+	max-width 800px
+	max-height 810px
+	padding 24px
     
 	
 	

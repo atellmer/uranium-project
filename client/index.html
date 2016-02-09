@@ -30,6 +30,7 @@
 							<span flex></span>
 							<nav>
 								<div class="header__links">
+									<md-button aria-haspopup="true" hm-tap="showDialog($event)"><span class="header__phone">+7(980)800-89-00</span></md-button>
 									<md-button aria-haspopup="true" ui-sref="root">Главная</md-button>
 									<md-button aria-haspopup="true" ui-sref="blog">Блог</md-button>
 								</div>
@@ -83,10 +84,10 @@
 						</md-button>
 					</md-fab-trigger>
 					<md-fab-actions>
-						<md-button ng-class="{'paper-shadow-z1':vm.isOpen}" aria-label="Наверх" class="md-fab md-raised md-mini fab-mini">
+						<md-button hm-tap="{'paper-shadow-z1':vm.isOpen}" aria-label="Заказать" class="md-fab md-raised md-mini fab-mini">
 							<md-icon md-font-set="material-icons fab-mini-icon">create</md-icon>
 						</md-button>
-						<md-button ng-click="moveUp()" ng-class="{'paper-shadow-z1':vm.isOpen}" aria-label="Заказать" class="md-fab md-raised md-mini">
+						<md-button hm-tap="moveUp()" ng-class="{'paper-shadow-z1':vm.isOpen}" aria-label="Наверх" class="md-fab md-raised md-mini">
 							<md-icon md-font-set="material-icons fab-mini-icon">arrow_upward</md-icon>
 						</md-button>
 					</md-fab-actions>
