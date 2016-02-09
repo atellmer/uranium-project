@@ -7,9 +7,9 @@
 		.module('app')
 		.controller('NavBarCtrl', NavBarCtrl);
 
-	NavBarCtrl.$inject = ['$scope', '$mdSidenav', '$mdDialog', '$mdMedia'];
+	NavBarCtrl.$inject = ['$scope', '$mdSidenav', '$mdDialog'];
 
-	function NavBarCtrl($scope, $mdSidenav, $mdDialog, $mdMedia) {
+	function NavBarCtrl($scope, $mdSidenav, $mdDialog) {
 
 		$scope.toggle = function () {
 			return buildToggler('menu');

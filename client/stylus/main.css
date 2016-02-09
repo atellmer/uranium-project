@@ -244,6 +244,7 @@ menu__item:active {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  z-index: 2;
 }
 @media screen and (max-width: 600px) {
   .fab-container {
@@ -550,7 +551,6 @@ menu__item:active {
 }
 .dialog-toolbar {
   background-color: #fff;
-  padding: 24px;
 }
 @media screen and (max-width: 600px) {
   .dialog-toolbar h2 {
@@ -566,5 +566,20 @@ menu__item:active {
 .dialog-content {
   max-width: 800px;
   max-height: 810px;
-  padding: 24px;
+  padding: 16px;
+}
+.phone-btn {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .phone-btn {
+    display: block;
+  }
+}
+.menu__phone {
+  padding: 18px 16px 18px 16px;
+  font-size: 1.4em;
+  color: #727272;
+  font-weight: 300;
+  margin: 0;
 }

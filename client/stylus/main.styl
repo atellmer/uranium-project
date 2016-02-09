@@ -181,6 +181,7 @@ a, a:hover, a:active, a:focus
 	position fixed
 	bottom 20px
 	right 20px
+	z-index 2
 	@media screen and (max-width: 600px)
 		bottom 10px
 		right 10px
@@ -348,7 +349,6 @@ a, a:hover, a:active, a:focus
 	
 .dialog-toolbar
 	background-color #FFF
-	padding 24px
 	
 .dialog-toolbar h2
 	@media screen and (max-width: 600px)
@@ -363,8 +363,24 @@ a, a:hover, a:active, a:focus
 .dialog-content
 	max-width 800px
 	max-height 810px
-	padding 24px
+	padding 16px
     
+.phone-btn
+	display none
+	@media screen and (max-width: 600px)
+		display block
+	
+.menu__phone
+	padding 18px 16px 18px 16px
+	font-size 1.4em
+	color $secondary-text-color
+	font-weight 300
+	margin 0
+	
+	
+	
+	
+	
 	
 	
 	
