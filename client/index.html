@@ -23,7 +23,6 @@
 							<md-button ng-click="toggle()" ng-hide="isOpen()" class="md-icon-button" aria-label="header">
 								<md-icon md-font-set="material-icons">menu</md-icon>
 							</md-button>
-
 							<a href="/">
 								<div class="logo"></div>
 							</a>
@@ -47,7 +46,6 @@
 					<md-toolbar>
 						<h1 class="md-toolbar-tools header-menu"><div class="logo logo--invert"></div></h1>
 					</md-toolbar>
-
 					<md-divider></md-divider>
 					<nav>
 						<md-list ng-controller="LinksCtrl">
@@ -76,11 +74,7 @@
 					<h2 class="menu__phone">+7(980)800-89-00</h2>
 				</md-sidenav>
 			</section>
-
-			<div ui-view>
-
-			</div>
-
+			<div ui-view></div>
 			<div ng-controller="FABCtrl as vm" class="fab-container">
 				<md-fab-speed-dial md-open="vm.isOpen" md-direction="{{vm.selectedDirection}}" ng-mouseenter="vm.isOpen=true" ng-mouseleave="vm.isOpen=false" ng-class="vm.selectedMode">
 					<md-fab-trigger>
@@ -98,12 +92,9 @@
 					</md-fab-actions>
 				</md-fab-speed-dial>
 			</div>
-
-
 		</div>
 		<!-- main container -->
 	</div>
-
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
