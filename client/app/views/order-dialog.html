@@ -1,4 +1,4 @@
-<md-dialog ng-controller="OrderDialogCtrl" aria-label="Заказать разработку">
+<md-dialog class="dialog" ng-controller="OrderDialogCtrl" aria-label="Заказать разработку">
 	<form>
 		<md-toolbar>
 			<div class="md-toolbar-tools dialog-toolbar">
@@ -11,16 +11,19 @@
 		</md-toolbar>
 		<md-dialog-content class="dialog-content">
 			<div>
-				<md-input-container class="md-block">
+				<md-input-container class="md-icon-float md-block"> 	
 					<label>Имя</label>
+					<md-icon md-font-set="material-icons dialog-content__icon">person</md-icon>
 					<input ng-model="user.name">
 				</md-input-container>
-				<md-input-container class="md-block">
+				<md-input-container class="md-icon-float md-block">
 					<label>Телефон</label>
+					<md-icon md-font-set="material-icons dialog-content__icon">phone</md-icon>
 					<input ng-model="user.phone">
 				</md-input-container>
-				<md-input-container class="md-block">
+				<md-input-container class="md-icon-float md-block">
 					<label>E-mail</label>
+					<md-icon md-font-set="material-icons dialog-content__icon">email</md-icon>
 					<input ng-model="user.email" type="email">
 				</md-input-container>
 			</div>

@@ -1,4 +1,4 @@
-<md-dialog ng-controller="PhoneDialogCtrl" aria-label="Заказать звонок">
+<md-dialog class="dialog" ng-controller="PhoneDialogCtrl" aria-label="Заказать звонок">
 	<form>
 		<md-toolbar>
 			<div class="md-toolbar-tools dialog-toolbar">
@@ -11,12 +11,14 @@
 		</md-toolbar>
 		<md-dialog-content class="dialog-content">
 			<div>
-				<md-input-container class="md-block">
+				<md-input-container class=" md-icon-float md-block">
 					<label>Имя</label>
+					<md-icon md-font-set="material-icons dialog-content__icon">person</md-icon>
 					<input ng-model="user.name">
 				</md-input-container>
-				<md-input-container class="md-block">
+				<md-input-container class="md-icon-float md-block">
 					<label>Телефон</label>
+					<md-icon md-font-set="material-icons dialog-content__icon">phone</md-icon>
 					<input ng-model="user.phone">
 				</md-input-container>
 			</div>
