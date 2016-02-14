@@ -589,3 +589,59 @@ menu__item:active {
   font-weight: 300;
   margin: 0;
 }
+.order {
+  width: 100%;
+  min-height: 500px;
+  height: auto;
+}
+.order__title {
+  margin: 0;
+  text-align: center;
+  padding: 60px 30px 60px 30px;
+  font-weight: 300;
+}
+@media screen and (max-width: 600px) {
+  .order__title {
+    font-size: 1.5em;
+    padding: 60px 30px 30px 30px;
+  }
+}
+.order-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.form-label {
+  font-weight: 400;
+}
+.form-label--input {
+  margin: 0;
+}
+.form-label--chekbox {
+  margin: 20px 0 30px 0;
+}
+.calculation__result {
+  font-weight: 400;
+  font-size: 2em;
+}
+@media screen and (max-width: 600px) {
+  .calculation__result {
+    font-size: 1.8em;
+  }
+}
+.order-btn__btn {
+  z-index: 1;
+  width: 100%;
+  margin: 20px 0;
+  color: #fff !important;
+  background: #ec407a !important;
+}
+.note {
+  color: #727272;
+  font-weight: 300;
+  margin-top: 10px;
+  font-size: 0.8em;
+}
+md-toast {
+  position: fixed !important;
+}

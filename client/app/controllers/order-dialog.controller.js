@@ -7,9 +7,9 @@
 		.module('app')
 		.controller('OrderDialogCtrl', OrderDialogCtrl);
 
-	OrderDialogCtrl.$inject = ['$scope', '$mdDialog'];
+	OrderDialogCtrl.$inject = ['$scope', '$mdDialog', '$mdToast'];
 
-	function OrderDialogCtrl($scope, $mdDialog) {
+	function OrderDialogCtrl($scope, $mdDialog, $mdToast) {
 
 		$scope.user = {};
 		$scope.user.name = '';
@@ -25,10 +25,15 @@
 		}
 
 		function send() {
-			console.log('name: ', $scope.user.name);
-			console.log('phone: ', $scope.user.phone);
-			console.log('email: ', $scope.user.email);
 			$mdDialog.cancel();
+
+			$mdToast.show(
+				$mdToast.simple()
+				.textContent('Ваш заказ отправлен! Спасибо!')
+				.position('bottom left')
+				.hideDelay(5000)
+				.parent(angular.element('#toast'))
+			);
 		}
 	}
 })();

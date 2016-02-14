@@ -87,6 +87,7 @@
 				</md-sidenav>
 			</section>
 			<div ui-view></div>
+			<div id="toast"></div>
 			<div ng-controller="FABCtrl as vm" class="fab-container">
 				<md-fab-speed-dial md-open="vm.isOpen" md-direction="{{vm.selectedDirection}}" ng-mouseenter="vm.isOpen=true" ng-mouseleave="vm.isOpen=false" ng-class="vm.selectedMode">
 					<md-fab-trigger>
@@ -96,7 +97,7 @@
 					</md-fab-trigger>
 					<md-fab-actions>
 						<md-button hm-tap="showDialog($event)" ng-class="{'paper-shadow-z1':vm.isOpen}" aria-label="Заказать" class="md-fab md-raised md-mini fab-mini">
-							<md-icon md-font-set="material-icons fab-mini-icon">mail_outline</md-icon>
+							<md-icon md-font-set="material-icons fab-mini-icon">phone</md-icon>
 						</md-button>
 						<md-button hm-tap="moveUp()" ng-class="{'paper-shadow-z1':vm.isOpen}" aria-label="Наверх" class="md-fab md-raised md-mini">
 							<md-icon md-font-set="material-icons fab-mini-icon">arrow_upward</md-icon>

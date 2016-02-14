@@ -30,7 +30,7 @@
 
 		function showDialog(ev) {
 			$mdDialog.show({
-				templateUrl: '../app/views/order-dialog.html',
+				templateUrl: '../app/views/phone-dialog.html',
 				parent: angular.element(document.body),
 				targetEvent: ev,
 				clickOutsideToClose: true
