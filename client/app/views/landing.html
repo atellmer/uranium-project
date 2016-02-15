@@ -48,15 +48,28 @@
 		</form>
 	</div>
 </div>
-<div class="portfolio">
+<div ng-controller="PortfolioCtrl" class="portfolio">
 	<h2 class="portfolio__title">Примеры работ</h2>
 	<div class="portfolio-container">
-		<div class="portfolio__item" style="background-image: url(../img/landing/portfolio/1.png);"></div>
-		<div class="portfolio__item" style="background-image: url(../img/landing/portfolio/2.png);"></div>
-		<div class="portfolio__item" style="background-image: url(../img/landing/portfolio/3.png);"></div>
-		<div class="portfolio__item" style="background-image: url(../img/landing/portfolio/4.png);"></div>
-		<div class="portfolio__item" style="background-image: url(../img/landing/portfolio/5.png);"></div>
-		<div class="portfolio__item" style="background-image: url(../img/landing/portfolio/6.png);"></div>
+		<ul class="ch-grid">
+			<li ng-repeat="item in items track by $index" class="portfolio__item">
+				<div class="ch-item" style="background-image: url({{::item.img}});">
+					<div class="ch-info-wrap">
+						<div class="ch-info">
+							<div class="ch-info-front" style="background-image: url({{::item.img}});"></div>
+							<div class="ch-info-back">
+								<h3>{{::item.title}}</h3>
+								<p><a href="{{::item.imlinkg}}">Подробнее</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
 	</div>
 </div>
+
+
+
+
 <div id="end-content"></div>
