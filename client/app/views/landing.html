@@ -5,11 +5,13 @@
 	<h2 class="cover-landing__title-second">
 		Мы делаем сайты на заказ для вашего бизнеса
 	</h2>
-	<md-button class="md-raised md-primary cover-landing__btn">Рассчитать стоимость</md-button>
+	<div ng-controller="CalculateBtnCtrl">
+		<md-button hm-tap="go()" class="md-raised md-primary cover-landing__btn">Рассчитать стоимость проекта</md-button>
+	</div>
 </div>
-<div ng-controller="OrderCtrl" class="order">
-	<h2 class="order__title">Давайте рассчитаем проект</h2>
-	<div class="order-container">
+<div id="scroll-here" ng-controller="OrderCtrl" class="order">
+	<h2 class="order__title">Давайте рассчитаем стоимость</h2>
+	<div class="paper-shadow-z1 order-container">
 		<form name="myForm">
 			<div class="input-container">
 				<label class="form-label form-label--input">Какой проект Вам необходим?</label>
@@ -40,10 +42,21 @@
 			</div>
 			<div class="note">* Сумма может меняться в процессе согласования</div>
 			<div class="order-btn" layout="row" layout-align="center center">
-				<md-button hm-tap="showDialog($event)" class="md-raised md-primary order-btn__btn">Заказать разработку</md-button>
+				<md-button hm-tap="showDialog($event)" class="md-raised md-primary order-btn__btn">Заказать разработку...</md-button>
 			</div>
 
 		</form>
+	</div>
+</div>
+<div class="portfolio">
+	<h2 class="portfolio__title">Примеры работ</h2>
+	<div class="portfolio-container">
+		<div class="portfolio__item" style="background-image: url(../img/landing/portfolio/1.png);"></div>
+		<div class="portfolio__item" style="background-image: url(../img/landing/portfolio/2.png);"></div>
+		<div class="portfolio__item" style="background-image: url(../img/landing/portfolio/3.png);"></div>
+		<div class="portfolio__item" style="background-image: url(../img/landing/portfolio/4.png);"></div>
+		<div class="portfolio__item" style="background-image: url(../img/landing/portfolio/5.png);"></div>
+		<div class="portfolio__item" style="background-image: url(../img/landing/portfolio/6.png);"></div>
 	</div>
 </div>
 <div id="end-content"></div>

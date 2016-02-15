@@ -401,6 +401,10 @@ a, a:hover, a:active, a:focus
 	max-width 700px
 	margin 0 auto
 	padding 20px
+	background-color #FFF
+	border-radius 2px
+	@media screen and (max-width: 600px)
+		border-radius 0
 	
 .form-label
 	font-weight 400
@@ -420,7 +424,7 @@ a, a:hover, a:active, a:focus
 .order-btn__btn
 	z-index 1
 	width 100%
-	margin 20px 0
+	margin 20px 0 0 0
 	color #FFF!important
 	background #EC407A!important
 	
@@ -433,3 +437,36 @@ a, a:hover, a:active, a:focus
 md-toast
 	position fixed!important
 	
+.portfolio
+	width 100%
+	min-height 500px
+	height auto
+	
+.portfolio__title
+	margin 0
+	text-align center
+	padding 60px 30px 30px 30px
+	font-weight 300
+	@media screen and (max-width: 600px)
+		font-size 1.5em
+		padding 60px 30px 30px 30px
+		
+.portfolio-container
+	max-width 1170px
+	margin 0 auto
+	display flex
+	flex-flow row wrap
+	justify-content center
+	align-items center
+	
+.portfolio__item
+	width 300px
+	height 300px
+	margin 20px
+	background-repeat no-repeat
+	background-size cover
+	background-position center
+	transition all .2s ease-in-out
+	@media screen and (max-width: 600px)
+		width 200px
+		height 200px
