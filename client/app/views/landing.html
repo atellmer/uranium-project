@@ -51,15 +51,15 @@
 <div ng-controller="PortfolioCtrl" class="portfolio">
 	<h2 class="portfolio__title">Примеры работ</h2>
 	<div class="portfolio-container">
-		<ul class="ch-grid">
+		<ul class="portfolio-grid">
 			<li ng-repeat="item in items track by $index" class="portfolio__item">
 				<div class="ch-item" style="background-image: url({{::item.img}});">
 					<div class="ch-info-wrap">
 						<div class="ch-info">
 							<div class="ch-info-front" style="background-image: url({{::item.img}});"></div>
 							<div class="ch-info-back">
-								<h3>{{::item.title}}</h3>
-								<p><a href="{{::item.imlinkg}}">Подробнее</a></p>
+								<h3 class="title-item">{{::item.title}}</h3>
+								<div class="btn-item">Подробнее</div>
 							</div>
 						</div>
 					</div>
@@ -68,8 +68,4 @@
 		</ul>
 	</div>
 </div>
-
-
-
-
 <div id="end-content"></div>
