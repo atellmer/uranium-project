@@ -1,8 +1,8 @@
-<div ng-controller="PostsCtrl" class="container no-padding">
+<div class="container no-padding">
 	<div class="row no-padding">
 		<div ng-repeat="card in cards track by $index" class="col-sm-6 col-md-4 no-padding">
 			<md-card aria-haspopup="true" class="paper-shadow-z1 card">
-				<img ng-src="{{::card.img}}" class="md-card-image" alt="{{::card.alt}}">
+				<img ng-src="{{::card.previewPic}}" class="md-card-image" alt="{{::card.alt}}">
 				<md-card-title>
 					<md-card-title-text>
 						<span class="md-headline">{{::card.title}}</span>

@@ -3,11 +3,11 @@
 	'use strict';
 	angular
 		.module('app')
-		.controller('PostsCtrl', PostsCtrl);
+		.controller('BlogCtrl', BlogCtrl);
 
-	PostsCtrl.$inject = ['$scope', '$http', '$window'];
+	BlogCtrl.$inject = ['$scope', '$http', '$window'];
 
-	function PostsCtrl($scope, $http, $window) {
+	function BlogCtrl($scope, $http, $window) {
 		var cash,
 			last,
 			delta,

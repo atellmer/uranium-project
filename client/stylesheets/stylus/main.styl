@@ -256,15 +256,23 @@ a, a:hover, a:active, a:focus
 		font-size 2em
 	
 .post-content
-	padding 40px 5% 40px 5%
+	max-width 950px
+	padding 100px 5%
 	font-family 'Lora', serif
-	font-size 1.5em
+	font-size 1.4em
 	color $primary-text-color
-	line-height 32px
+	line-height 28px
 	transition font-size .2s ease-in-out
+	@media screen and (max-width: 1140px)
+		padding 40px 5%
 	@media screen and (max-width: 600px)
 		font-size 1em
 		line-height 22px
+		padding 30px 5%
+	@media screen and (max-width: 320px)
+		font-size 0.9em
+		line-height 22px
+		padding 20px
 	
 .post-content p
 	margin-bottom 25px
@@ -483,6 +491,19 @@ md-toast
 		width 200px
 		height 200px
 		margin 20px
+	@media screen and (min-width: 768px)
+		&:hover
+			.portfolio-item__cover
+				opacity 1
+				animation-name appearance
+				animation-duration .7s
+				
+			.portfolio-item__btn
+				display block
+				
+	@media screen and (max-width: 768px)
+		.portfolio-item__btn--mobile
+			display block
 		
 .portfolio-item__cover
 	width 200px
@@ -500,15 +521,9 @@ md-toast
 	user-select none
 	font-size 0.9em
 	padding 10px
-	opacity 0
-	&:hover
-		opacity 1
-		animation-name appearance
-		animation-duration .7s
+	opacity 0	
 	@media screen and (max-width: 992px)
-		width 150px
-		height 150px
-		font-size 0.8em
+		display none
 	
 .portfolio-item__title
 	font-weight 700
@@ -531,7 +546,27 @@ md-toast
 	color $accent-color
 	border-radius 30px
 	cursor pointer
-
+	transition background-color .2s ease-in-out
+	display none
+	&:hover
+		background-color $accent-color
+		color #fff
+		
+.portfolio-item__btn--mobile
+	display none
+	width 50px
+	height 50px
+	border solid 1px $accent-color
+	color $accent-color
+	border-radius 50%
+	background-color rgba(255, 255, 255, 0.9)
+	text-align center
+	cursor pointer
+	
+.portfolio-item__icon
+	position relative
+	top 12px
+	
 @keyframes appearance{
 	0%{
 		transform scale(0.6)
@@ -543,3 +578,5 @@ md-toast
 		transform scale(1)
 	}
 }
+
+
