@@ -51,21 +51,15 @@
 <div ng-controller="PortfolioCtrl" class="portfolio">
 	<h2 class="portfolio__title">Примеры работ</h2>
 	<div class="portfolio-container">
-		<ul class="portfolio-grid">
-			<li ng-repeat="item in items track by $index" class="portfolio__item">
-				<div class="ch-item" style="background-image: url({{::item.img}});">
-					<div class="ch-info-wrap">
-						<div class="ch-info">
-							<div class="ch-info-front" style="background-image: url({{::item.img}});"></div>
-							<div class="ch-info-back">
-								<h3 class="title-item">{{::item.title}}</h3>
-								<div class="btn-item">Подробнее</div>
-							</div>
-						</div>
-					</div>
+		<div ng-repeat="item in items track by $index" class="portfolio-item" style="background-image:url({{::item.img}});">
+			<div class="paper-shadow-z2 portfolio-item__cover">
+				<div>
+					<div class="portfolio-item__title">{{::item.title}}</div>
+					<div class="portfolio-item__text">{{::item.text}}</div>
 				</div>
-			</li>
-		</ul>
+				<span class="portfolio-item__btn">Подробнее</span>
+			</div>
+		</div>
 	</div>
 </div>
 <div id="end-content"></div>
