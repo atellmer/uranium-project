@@ -1,9 +1,12 @@
+
 <div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<h2 style="text-align: center;">Страница портфолио #{{::id}}</h2>
+<style>
+	.cover-item::after {
+		background-image: linear-gradient(90deg, {{::item.firstColor}}, {{::item.secondColor}});
+	}
+</style>
+	<div class="cover-item">
+		<a class="cover-item__link" target="blank" href="{{::item.link}}">{{::item.name}}</a>
+	</div>
 </div>
 <div id="end-content"></div>

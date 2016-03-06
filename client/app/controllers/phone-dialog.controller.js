@@ -7,13 +7,16 @@
 		.module('app')
 		.controller('PhoneDialogCtrl', PhoneDialogCtrl);
 
-	PhoneDialogCtrl.$inject = ['$scope', '$mdDialog'];
+	PhoneDialogCtrl.$inject = ['$scope', '$sanitize', '$mdDialog'];
 
-	function PhoneDialogCtrl($scope, $mdDialog) {
+	function PhoneDialogCtrl($scope, $sanitize, $mdDialog) {
 
-		$scope.user = {};
-		$scope.user.name = '';
-		$scope.user.phone = '';
+		var user = {
+			name: '',
+			phone: ''
+		}
+
+		$scope.user = user;
 
 		$scope.cancel = function () {
 			$mdDialog.cancel();
@@ -24,8 +27,13 @@
 		}
 
 		function send() {
-			console.log('name: ', $scope.user.name);
-			console.log('phone: ', $scope.user.phone);
+
+			user.name = $sanitize($scope.user.name);
+			user.phone = $sanitize($scope.user.phone);
+
+			console.log(user.name);
+			console.log(user.phone);
+
 			$mdDialog.cancel();
 		}
 	}

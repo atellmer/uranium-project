@@ -7,14 +7,18 @@
 		.module('app')
 		.controller('OrderDialogCtrl', OrderDialogCtrl);
 
-	OrderDialogCtrl.$inject = ['$scope', '$mdDialog', '$mdToast'];
+	OrderDialogCtrl.$inject = ['$scope', '$sanitize', '$mdDialog', '$mdToast'];
 
-	function OrderDialogCtrl($scope, $mdDialog, $mdToast) {
+	function OrderDialogCtrl($scope, $sanitize, $mdDialog, $mdToast) {
 
-		$scope.user = {};
-		$scope.user.name = '';
-		$scope.user.phone = '';
-		$scope.user.email = '';
+		var user = {
+			name: '',
+			phone: '',
+			email: ''
+		}
+
+		$scope.user = user;
+
 
 		$scope.cancel = function () {
 			$mdDialog.cancel();
@@ -26,6 +30,14 @@
 
 		function send() {
 			$mdDialog.cancel();
+
+			user.name = $sanitize($scope.user.name);
+			user.phone = $sanitize($scope.user.phone);
+			user.email = $sanitize($scope.user.email);
+
+			console.log(user.name);
+			console.log(user.phone);
+			console.log(user.email);
 
 			$mdToast.show(
 				$mdToast.simple()

@@ -3,42 +3,60 @@
 		"id": "1",
 		"title": "Название сайта...",
 		"text": "Товарищи! новая модель организационной деятельности Товарищи! новая модель организационной деятельности Товарищи! новая модель организационной деятельности Товарищи! новая модель организационной деятельности",
-		"link": "#",
-		"img": "img/landing/portfolio/1.png"
+		"link": "http://skminogin.ru",
+		"name": "skminogin.ru",
+		"img": "img/landing/portfolio/1.png",
+		"firstColor": "#8BC34A",
+		"secondColor": "#009688"
   	},
 	{
 		"id": "2",
 		"title": "Название сайта...",
 		"text": "Товарищи! новая модель организационной деятельности...",
-		"link": "#",
-		"img": "img/landing/portfolio/2.png"
+		"link": "http://facebook.com",
+		"name": "facebook.com",
+		"img": "img/landing/portfolio/2.png",
+		"firstColor": "#3F51B5",
+		"secondColor": "#2196F3"
   	},
 	{
 		"id": "3",
 		"title": "Название сайта...",
 		"text": "Товарищи! новая модель организационной деятельности... Товарищи! новая модель организационной деятельности...",
-		"link": "#",
-		"img": "img/landing/portfolio/3.png"
+		"link": "http://facebook.com",
+		"name": "facebook.com",
+		"img": "img/landing/portfolio/3.png",
+		"firstColor": "#E91E63",
+		"secondColor": "#9C27B0"
   	},
 	{
 		"id": "4",
 		"title": "Название сайта...",
 		"text": "Товарищи! новая модель организационной деятельности... Товарищи! новая модель организационной деятельности...",
-		"link": "#",
-		"img": "img/landing/portfolio/4.png"
+		"link": "http://skminogin.ru",
+		"name": "skminogin.ru",
+		"img": "img/landing/portfolio/4.png",
+		"firstColor": "#E91E63",
+		"secondColor": "#9C27B0"
   	},
 	{
 		"id": "5",
 		"title": "Название сайта...",
 		"text": "Товарищи! новая модель организационной деятельности... Товарищи! новая модель организационной деятельности...",
-		"link": "#",
-		"img": "img/landing/portfolio/5.png"
+		"link": "http://skminogin.ru",
+		"name": "skminogin.ru",
+		"img": "img/landing/portfolio/5.png",
+		"firstColor": "#E91E63",
+		"secondColor": "#9C27B0"
   	},
 	{
 		"id": "6",
 		"title": "Название сайта...",
 		"text": "Товарищи! новая модель организационной деятельности... Товарищи! новая модель организационной деятельности...",
-		"link": "#",
-		"img": "img/landing/portfolio/6.png"
+		"link": "http://skminogin.ru",
+		"name": "skminogin.ru",
+		"img": "img/landing/portfolio/6.png",
+		"firstColor": "#E91E63",
+		"secondColor": "#9C27B0"
   	}
 ]
