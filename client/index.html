@@ -17,31 +17,8 @@
 <body ng-cloak ng-controller="LoadCtrl">
 	<div class="wrapper" ng-class="{'smoothOpacity':onload}">
 		<div class="container-fluid">
-			<!-- main container -->
-			<header ng-controller="NavBarCtrl" md-whiteframe="4" class="header-fixed">
-				<md-content>
-					<md-toolbar>
-						<div class="md-toolbar-tools header">
-							<md-button ng-click="toggle()" ng-hide="isOpen()" class="md-icon-button" aria-label="header">
-								<md-icon md-font-set="material-icons type-color">menu</md-icon>
-							</md-button>
-							<div ui-sref="root" class="logo"></div>
-							<span flex></span>
-							<nav>
-								<md-button hm-tap="showDialog($event)" class="md-icon-button phone-btn" aria-label="phone">
-									<md-icon md-font-set="material-icons type-color">phone</md-icon>
-								</md-button>
-								<div class="header__links">
-									<md-button aria-haspopup="true" hm-tap="showDialog($event)" class="type-color"><span class="header__phone">+7(980)800-89-00</span></md-button>
-									<md-button aria-haspopup="true" ui-sref="root" class="type-color">Главная</md-button>
-									<md-button aria-haspopup="true" ui-sref="blog" class="type-color">Блог</md-button>
-									<md-button aria-haspopup="true" ui-sref="contacts" class="type-color">Контакты</md-button>
-								</div>
-							</nav>
-						</div>
-					</md-toolbar>
-				</md-content>
-			</header>
+			<lk-header></lk-header>
+			<lk-menu></lk-menu>
 			<section layout="row" flex>
 				<md-sidenav class="md-sidenav-left position-fixed" md-component-id="menu" md-whiteframe="2">
 					<md-toolbar>
@@ -81,7 +58,7 @@
 				</md-sidenav>
 			</section>
 			<div ui-view></div>
-			<div id="toast"></div>
+			<lk-toast></lk-toast>
 			<div ng-controller="FABCtrl as vm" class="fab-container">
 				<md-fab-speed-dial md-open="vm.isOpen" md-direction="{{vm.selectedDirection}}" ng-mouseenter="vm.isOpen=true" ng-mouseleave="vm.isOpen=false" ng-class="vm.selectedMode">
 					<md-fab-trigger>
@@ -99,8 +76,9 @@
 					</md-fab-actions>
 				</md-fab-speed-dial>
 			</div>
+			<lk-end-content></lk-end-content>
+			<lk-made-with-love></lk-made-with-love>
 		</div>
-		<!-- main container -->
 	</div>
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/angular/angular.min.js"></script>

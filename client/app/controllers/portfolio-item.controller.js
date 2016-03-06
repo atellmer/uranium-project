@@ -5,9 +5,11 @@
 		.module('app')
 		.controller('PortfolioItemCtrl', PortfolioItemCtrl);
 
-	PortfolioItemCtrl.$inject = ['$scope', '$http', '$stateParams', '$sanitize'];
+	PortfolioItemCtrl.$inject = ['$scope', '$http', '$stateParams', '$sanitize', 'lkScroll'];
 
-	function PortfolioItemCtrl($scope, $http, $stateParams, $sanitize) {
+	function PortfolioItemCtrl($scope, $http, $stateParams, $sanitize, lkScroll) {
+
+		lkScroll.top();
 
 		var id = $stateParams.id,
 			path = '../app/models/portfolio.model.json';
@@ -24,8 +26,5 @@
 				console.log('не найден пост');
 			}
 		});
-
-		console.log('зашли в портфолио! #', id);
-
 	}
 })();

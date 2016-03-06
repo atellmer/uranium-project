@@ -31,6 +31,8 @@ gulp.task('scripts', function () {
 	return gulp.src([
 		path.root + 'app/**/*.module.js',
 		path.root + 'app/**/*.config.js',
+		path.root + 'app/**/*.factory.js',
+		path.root + 'app/**/directive.js',
 		path.root + 'app/**/*.controller.js'
 	])
 		.pipe(concat('bundle.js'))
@@ -57,7 +59,8 @@ gulp.task('styl', function () {
 gulp.task('html', function () {
 	return gulp.src([
 				path.root + 'index.html',
-				path.root + 'app/views/*.html'
+				path.root + 'app/views/*.html',
+				path.root + 'app/directives/**/*.html'
 			])
 		.pipe(connect.reload());
 });
@@ -66,7 +69,7 @@ gulp.task('html', function () {
 gulp.task('watch', function () {
 	gulp.watch(path.root + 'app/**/*.*', ['scripts']);
 	gulp.watch(path.stylus() + '*.styl', ['styl']);
-	gulp.watch([path.root + 'index.html', path.root + 'app/views/*.html'], ['html']);
+	gulp.watch([path.root + 'index.html', path.root + 'app/views/*.html', path.root + 'app/directives/**/*.html'], ['html']);
 
 });
 

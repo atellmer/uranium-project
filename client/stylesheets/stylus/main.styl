@@ -159,7 +159,6 @@ a, a:hover, a:active, a:focus
 .container
 	box-sizing border-box
 	margin 0 auto
-	padding-bottom $base-height
 	padding-top ($base-height * 2) + 8
 	@media screen and (max-width: 600px)
 		padding-top ($base-height * 2)
@@ -257,22 +256,22 @@ a, a:hover, a:active, a:focus
 	
 .post-content
 	max-width 950px
-	padding 100px 5%
+	padding 100px 5% 0 5%
 	font-family 'Lora', serif
 	font-size 1.4em
 	color $primary-text-color
 	line-height 28px
 	transition font-size .2s ease-in-out
 	@media screen and (max-width: 1140px)
-		padding 40px 5%
+		padding 40px 5% 0 5%
 	@media screen and (max-width: 600px)
 		font-size 1em
 		line-height 22px
-		padding 30px 5%
+		padding 30px 5% 0 5%
 	@media screen and (max-width: 320px)
 		font-size 0.9em
 		line-height 22px
-		padding 20px
+		padding 20px 20px 0 20px
 	
 .post-content p
 	margin-bottom 25px
@@ -623,4 +622,59 @@ md-toast
 	@media screen and (max-width: 600px)
 		font-size 2em	
 		
-		
+.made-with-love
+	position relative
+	bottom 0
+	margin 50px 0 50px 0
+	text-align center
+	font-weight 300
+	letter-spacing 2px
+	
+.heart-icon
+	font-size 0.8em
+	color #F44336
+	
+.company
+	text-transform uppercase
+	
+.contacts
+	display flex
+	flex-direction row
+	flex-wrap wrap
+	justify-content center
+	align-items center
+	width 100%
+	height 100vh
+	background-image url(../../img/contacts/1.jpg)
+	background-position center
+	background-repeat no-repeat
+	background-size cover
+	
+.contacts::after
+	content ''
+	position absolute
+	top 0
+	left 0
+	width 100%
+	height 100vh
+	background-image linear-gradient(90deg, #9C27B0, #673AB7)
+	opacity 0.95
+	
+.contact-list
+	margin-top $base-height * 2
+	z-index 1
+	color #fff
+	
+.list-item
+	display flex
+	flex-direction column
+	flex-wrap wrap
+	justify-content center
+	align-items center
+	
+.contact-list__item
+	font-weight 100
+	font-size 3em
+	transition font-size .2s ease-in-out
+	@media screen and (max-width: 600px)
+		font-size 1.5em
