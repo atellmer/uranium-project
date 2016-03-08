@@ -31,7 +31,7 @@ gulp.task('scripts', function () {
 	return gulp.src([
 		path.root + 'app/**/*.module.js',
 		path.root + 'app/**/*.config.js',
-		path.root + 'app/**/*.factory.js',
+		path.root + 'app/**/*.service.js',
 		path.root + 'app/**/directive.js',
 		path.root + 'app/**/*.controller.js'
 	])
