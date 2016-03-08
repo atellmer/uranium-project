@@ -10,10 +10,10 @@ var gulp = require('gulp'),
 var path = {
 	root: 'client/',
 	stylus: function () {
-		return this.root + 'stylesheets/stylus/'
+		return this.root + 'stylesheets/'
 	},
-	css: function () {
-		return this.root + 'stylesheets/css/'
+	dist: function () {
+		return this.root + 'dist/'
 	}
 }
 
@@ -38,7 +38,7 @@ gulp.task('scripts', function () {
 		.pipe(concat('bundle.js'))
 		.pipe(uglify())
 		.pipe(rename('bundle.min.js'))
-		.pipe(gulp.dest('client/app/dist/'))
+		.pipe(gulp.dest(path.dist()))
 		.pipe(connect.reload());
 });
 
@@ -51,7 +51,7 @@ gulp.task('styl', function () {
 			compress: true
 		}))
 		.pipe(rename('bundle.min.css'))
-		.pipe(gulp.dest(path.css()))
+		.pipe(gulp.dest(path.dist()))
 		.pipe(connect.reload());
 });
 
