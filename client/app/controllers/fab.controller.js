@@ -23,7 +23,7 @@
 		};
 
 		function moveUp() {
-			angular.element("body,html").animate({
+			angular.element('body,html').animate({
 				scrollTop: 0
 			}, 500);
 		}
@@ -31,7 +31,7 @@
 		function showDialog(ev) {
 			$mdDialog.show({
 				templateUrl: '../app/views/phone-dialog.html',
-				parent: angular.element(document.body),
+				parent: angular.element('body'),
 				targetEvent: ev,
 				clickOutsideToClose: true
 			});

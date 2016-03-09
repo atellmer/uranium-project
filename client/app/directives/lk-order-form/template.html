@@ -6,11 +6,7 @@
 				<label class="form-label form-label--input">Какой проект Вам необходим?</label>
 				<md-input-container class="md-block">
 					<md-select placeholder="Выбрать..." ng-model="type" ng-change="calculate()" required>
-						<md-option value="0">Продающий лендинг</md-option>
-						<md-option value="1">Промо-сайт</md-option>
-						<md-option value="2">Сайт-визитка</md-option>
-						<md-option value="3">Корпоративный сайт</md-option>
-						<md-option value="4">Интернте-магазин</md-option>
+						<md-option ng-repeat="project in projects track by $index" value="{{::$index}}">{{::project.name}}</md-option>
 					</md-select>
 				</md-input-container>
 			</div>

@@ -5,55 +5,40 @@
 		.module('app')
 		.controller('OrderCtrl', OrderCtrl);
 
-	OrderCtrl.$inject = ['$scope', '$mdDialog'];
+	OrderCtrl.$inject = ['$scope', '$http', '$mdDialog'];
 
-	function OrderCtrl($scope, $mdDialog) {
+	function OrderCtrl($scope, $http, $mdDialog) {
 
-		var project = [
-			{
-				name: 'Продающий лендинг',
-				price: 10000
-			},
-			{
-				name: 'Промо-сайт',
-				price: 20000
-			},
-			{
-				name: 'Сайт-визитка',
-				price: 30000
-			},
-			{
-				name: 'Корпоративный сайт',
-				price: 40000
-			},
-			{
-				name: 'Интернет-магазин',
-				price: 50000
+		var projects = [];
+		var services = [];
+		var path = '../app/models/prices.model.json';
+
+		$http.get(path).success(function (response) {
+			var j = 0;
+			var k = 0;
+			for (var i = 0; i < response.length; i++) {
+
+				if (response[i].type === 'сайт') {
+					projects[j] = response[i];
+					j++;
+				}
+				if (response[i].type === 'услуга') {
+					services[k] = response[i];
+					k++;
+				}
 			}
-		];
+		});
 
-		var services = [
-			{
-				name: 'SEO-оптимизация',
-				price: 10000
-			},
-			{
-				name: 'Продвижение в Яндекс.Директ',
-				price: 10000
-			},
-			{
-				name: 'Техническое обслуживание сайта на год',
-				price: 5000
-			},
-		]
-
+		$scope.projects = projects;
+		$scope.services = services;
 		$scope.type = false;
+		$scope.cost = 0;
+
 		$scope.service = {
 			cb1: false,
 			cb2: false,
 			cb3: false
 		};
-		$scope.cost = 0;
 
 		$scope.send = function () {
 			return send();
@@ -70,7 +55,7 @@
 		function calculate() {
 			$scope.cost = 0;
 			if ($scope.type) {
-				$scope.cost += project[$scope.type].price;
+				$scope.cost += projects[$scope.type].price;
 			}
 			if ($scope.service) {
 				if ($scope.service.cb1) {
@@ -88,7 +73,7 @@
 		function showDialog(ev) {
 			$mdDialog.show({
 				templateUrl: '../app/views/order-dialog.html',
-				parent: angular.element(document.body),
+				parent: angular.element('body'),
 				targetEvent: ev,
 				clickOutsideToClose: true
 			});
