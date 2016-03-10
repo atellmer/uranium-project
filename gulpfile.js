@@ -69,7 +69,10 @@ gulp.task('html', function () {
 gulp.task('watch', function () {
 	gulp.watch(path.root + 'app/**/*.*', ['scripts']);
 	gulp.watch(path.stylus() + '*.styl', ['styl']);
-	gulp.watch([path.root + 'index.html', path.root + 'app/views/*.html', path.root + 'app/directives/**/*.html'], ['html']);
+	gulp.watch([
+		path.root + 'index.html',
+		path.root + 'app/views/*.html',
+		path.root + 'app/directives/**/*.html'], ['html']);
 
 });
 
