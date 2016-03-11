@@ -8,16 +8,15 @@
 	OrderCtrl.$inject = ['$scope', '$http', '$mdDialog'];
 
 	function OrderCtrl($scope, $http, $mdDialog) {
-
 		var projects = [];
 		var services = [];
 		var path = '../app/models/prices.model.json';
+		var parent = angular.element(document.querySelector('body'));
 
 		$http.get(path).success(function (response) {
 			var j = 0;
 			var k = 0;
 			for (var i = 0; i < response.length; i++) {
-
 				if (response[i].type === 'сайт') {
 					projects[j] = response[i];
 					j++;
@@ -38,10 +37,6 @@
 			cb1: false,
 			cb2: false,
 			cb3: false
-		};
-
-		$scope.send = function () {
-			return send();
 		};
 
 		$scope.calculate = function () {
@@ -73,11 +68,11 @@
 		function showDialog(ev) {
 			$mdDialog.show({
 				templateUrl: '../app/views/order-dialog.html',
-				parent: angular.element('body'),
+				parent: parent,
 				targetEvent: ev,
-				clickOutsideToClose: true
+				clickOutsideToClose: true,
+				controller: 'OrderDialogCtrl'
 			});
 		}
 	}
-
 })();

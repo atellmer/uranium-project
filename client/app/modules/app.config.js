@@ -8,8 +8,7 @@
 	configurator.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
 	function configurator($stateProvider, $urlRouterProvider, $locationProvider) {
-
-		$locationProvider.html5Mode(true);
+		//$locationProvider.html5Mode(true);
 
 		$urlRouterProvider.otherwise('/');
 
@@ -38,5 +37,4 @@
 				templateUrl: '../app/views/contacts.html'
 			});
 	}
-
 })();

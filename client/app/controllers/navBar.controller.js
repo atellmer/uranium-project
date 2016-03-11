@@ -10,6 +10,7 @@
 	NavBarCtrl.$inject = ['$scope', '$mdSidenav', '$mdDialog'];
 
 	function NavBarCtrl($scope, $mdSidenav, $mdDialog) {
+		var parent = angular.element(document.querySelector('body'));
 
 		$scope.toggle = function () {
 			return buildToggler('menu');
@@ -21,7 +22,7 @@
 
 		$scope.showDialog = function (ev) {
 			return showDialog(ev);
-		};
+		}
 
 		function buildToggler(id) {
 			$mdSidenav(id).toggle();
@@ -30,11 +31,11 @@
 		function showDialog(ev) {
 			$mdDialog.show({
 				templateUrl: '../app/views/phone-dialog.html',
-				parent: angular.element(document.body),
+				parent: parent,
 				targetEvent: ev,
-				clickOutsideToClose: true
+				clickOutsideToClose: true,
+				controller: 'PhoneDialogCtrl'
 			});
 		}
 	}
-
 })();

@@ -8,7 +8,6 @@
 	PortfolioItemCtrl.$inject = ['$scope', '$http', '$stateParams', '$sanitize', 'lkScroll'];
 
 	function PortfolioItemCtrl($scope, $http, $stateParams, $sanitize, lkScroll) {
-
 		lkScroll.top();
 
 		var id = $stateParams.id,
@@ -17,7 +16,6 @@
 		$scope.id = id;
 
 		$http.get(path).success(function (response) {
-
 			var findId = response[id - 1].id;
 
 			if (id === findId) {

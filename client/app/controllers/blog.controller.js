@@ -19,18 +19,15 @@
 			delta = 3;
 			cash = {};
 			$scope.cards = {};
-
 			cash = response;
-
 			$scope.cards = cash.slice(0, initial);
 			last = delta;
 		});
 
-		angular.element($window).bind('scroll', scrollHandler);
+		angular.element($window).on('scroll', scrollHandler);
 
 		function loadMoreItems() {
 			if (cash && (delta + last < cash.length)) {
-
 				last = $scope.cards.length;
 
 				var cards = $scope.cards.concat(cash.slice(last, last + delta));
@@ -38,12 +35,14 @@
 			}
 		}
 
-		function scrollHandler() {
+		function scrollHandler($event) {
 			var position,
-				end;
+				end,
+				element = angular.element($window),
+				endElement = angular.element(document.querySelector('#end-content'));
 
-			position = angular.element(this).scrollTop() + angular.element(this).height();
-			end = angular.element('#end-content').offset().top;
+			position = element.scrollTop() + element.height();
+			end = endElement.offset().top;
 
 			if (position >= end) {
 				$scope.$apply(loadMoreItems);

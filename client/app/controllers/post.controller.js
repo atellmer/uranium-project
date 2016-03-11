@@ -8,7 +8,6 @@
 	PostCtrl.$inject = ['$scope', '$http', '$stateParams', '$sanitize', 'lkScroll'];
 
 	function PostCtrl($scope, $http, $stateParams, $sanitize, lkScroll) {
-
 		lkScroll.top();
 
 		var id = $stateParams.id,
@@ -18,9 +17,7 @@
 			return goBack();
 		}
 
-
 		$http.get(path).success(function (response) {
-
 			var findId = response[id - 1].id;
 
 			if (id === findId) {
@@ -33,8 +30,5 @@
 		function goBack() {
 			history.back();
 		}
-
 	}
-
-
 })();

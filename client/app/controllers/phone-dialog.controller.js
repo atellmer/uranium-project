@@ -10,11 +10,10 @@
 	PhoneDialogCtrl.$inject = ['$scope', '$sanitize', '$mdDialog'];
 
 	function PhoneDialogCtrl($scope, $sanitize, $mdDialog) {
-
 		var user = {
 			name: '',
 			phone: ''
-		}
+		};
 
 		$scope.user = user;
 
@@ -27,7 +26,6 @@
 		}
 
 		function send() {
-
 			user.name = $sanitize($scope.user.name);
 			user.phone = $sanitize($scope.user.phone);
 

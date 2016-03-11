@@ -9,6 +9,10 @@
 	FABCtrl.$inject = ['$scope', '$mdDialog'];
 
 	function FABCtrl($scope, $mdDialog) {
+		var elementBody = angular.element(document.querySelector('body')),
+			elementHtml = angular.element(document.querySelector('html')),
+			parent = angular.element(document.querySelector('body'));
+
 		this.isOpen = false;
 		this.selectedMode = 'md-fling';
 		this.selectedDirection = 'up';
@@ -20,10 +24,13 @@
 
 		$scope.showDialog = function (ev) {
 			return showDialog(ev);
-		};
+		}
 
 		function moveUp() {
-			angular.element('body,html').animate({
+			elementBody.animate({
+				scrollTop: 0
+			}, 500);
+			elementHtml.animate({
 				scrollTop: 0
 			}, 500);
 		}
@@ -31,12 +38,11 @@
 		function showDialog(ev) {
 			$mdDialog.show({
 				templateUrl: '../app/views/phone-dialog.html',
-				parent: angular.element('body'),
+				parent: parent,
 				targetEvent: ev,
-				clickOutsideToClose: true
+				clickOutsideToClose: true,
+				controller: 'PhoneDialogCtrl'
 			});
 		}
 	}
-
-
 })();

@@ -9,15 +9,19 @@
 	CalculateBtnCtrl.$inject = ['$scope'];
 
 	function CalculateBtnCtrl($scope) {
-
-		var element = angular.element('#scroll-here');
+		var element = angular.element(document.querySelector('#scroll-here')),
+			elementBody = angular.element(document.querySelector('body')),
+			elementHtml = angular.element(document.querySelector('html'));
 
 		$scope.go = function () {
 			return go();
 		}
 
 		function go() {
-			angular.element("body,html").animate({
+			elementBody.animate({
+				scrollTop: (element.offset().top - 50)
+			}, 500);
+			elementHtml.animate({
 				scrollTop: (element.offset().top - 50)
 			}, 500);
 		}

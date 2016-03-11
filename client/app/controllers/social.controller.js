@@ -9,7 +9,6 @@
 	SocialCtrl.$inject = ['$scope', 'lkSocial'];
 
 	function SocialCtrl($scope, lkSocial) {
-
 		var site = 'http://likearts.ru',
 			title = 'LIKEARTS',
 			image = 'http://s.fotorama.io/1.jpg',
@@ -44,5 +43,4 @@
 			lkSocial.tw(site, title);
 		}
 	}
-
 })();

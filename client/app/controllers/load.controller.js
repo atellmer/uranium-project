@@ -6,12 +6,11 @@
 		.module('app')
 		.controller('LoadCtrl', LoadCtrl);
 
-	LoadCtrl.$inject = ['$scope', '$window'];
+	LoadCtrl.$inject = ['$scope'];
 
 	function LoadCtrl($scope) {
 		angular.element(document).ready(function () {
 			$scope.onload = true;
 		});
-
 	}
 })();

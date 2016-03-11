@@ -10,15 +10,14 @@
 	OrderDialogCtrl.$inject = ['$scope', '$sanitize', '$mdDialog', '$mdToast'];
 
 	function OrderDialogCtrl($scope, $sanitize, $mdDialog, $mdToast) {
-
 		var user = {
-			name: '',
-			phone: '',
-			email: ''
-		}
+				name: '',
+				phone: '',
+				email: ''
+			},
+			toast = angular.element(document.querySelector('#toast'));
 
 		$scope.user = user;
-
 
 		$scope.cancel = function () {
 			$mdDialog.cancel();
@@ -44,7 +43,7 @@
 				.textContent('Ваш заказ отправлен! Спасибо!')
 				.position('bottom left')
 				.hideDelay(5000)
-				.parent(angular.element('#toast'))
+				.parent(toast)
 			);
 		}
 	}

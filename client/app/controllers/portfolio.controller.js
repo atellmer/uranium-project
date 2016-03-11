@@ -12,10 +12,7 @@
 		var path = '../app/models/portfolio.model.json';
 
 		$http.get(path).success(function (response) {
-
 			$scope.items = response;
 		});
-
 	}
-
 })();
