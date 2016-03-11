@@ -1,5 +1,5 @@
 <md-dialog class="dialog" aria-label="Заказать звонок">
-	<form>
+	<form name="phoneOrderForm" novalidate>
 		<md-toolbar>
 			<div class="md-toolbar-tools dialog-toolbar">
 				<h2 class="dialog-toolbar__title">Заказать звонок</h2>
@@ -10,22 +10,20 @@
 			</div>
 		</md-toolbar>
 		<md-dialog-content class="dialog-content">
-			<div>
-				<md-input-container class=" md-icon-float md-block">
-					<label>Имя</label>
-					<md-icon md-font-set="material-icons dialog-content__icon">person</md-icon>
-					<input ng-model="user.name">
-				</md-input-container>
-				<md-input-container class="md-icon-float md-block">
-					<label>Телефон</label>
-					<md-icon md-font-set="material-icons dialog-content__icon">phone</md-icon>
-					<input ng-model="user.phone">
-				</md-input-container>
-			</div>
+			<md-input-container class=" md-icon-float md-block">
+				<label>Имя</label>
+				<md-icon md-font-set="material-icons dialog-content__icon">person</md-icon>
+				<input name="userName" ng-model="user.name" required>
+			</md-input-container>
+			<md-input-container class="md-icon-float md-block">
+				<label>Телефон</label>
+				<md-icon md-font-set="material-icons dialog-content__icon">phone</md-icon>
+				<input name="userPhone" ng-model="user.phone" required>
+			</md-input-container>
 		</md-dialog-content>
 		<md-dialog-actions layout="row">
 			<span flex></span>
-			<md-button hm-tap="send()" class="md-primary md-hue-1">
+			<md-button hm-tap="send()" ng-disabled="phoneOrderForm.$invalid" class="md-primary md-hue-1">
 				Перезвоните мне
 			</md-button>
 		</md-dialog-actions>

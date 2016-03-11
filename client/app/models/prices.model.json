@@ -3,48 +3,56 @@
 		"id": "1",
 		"type": "сайт",
 		"name": "Продающий лендинг",
-		"price": 10000
+		"price": 10000,
+		"checked": false
 	},
 	{
 		"id": "2",
 		"type": "сайт",
 		"name": "Промо-сайт",
-		"price": 20000
+		"price": 20000,
+		"checked": false
 	},
 	{
 		"id": "3",
 		"type": "сайт",
 		"name": "Сайт-визитка",
-		"price": 30000
+		"price": 30000,
+		"checked": false
 	},
 	{
 		"id": "4",
 		"type": "сайт",
 		"name": "Корпоративный сайт",
-		"price": 40000
+		"price": 40000,
+		"checked": false
 	},
 	{
 		"id": "5",
 		"type": "сайт",
 		"name": "Интернет-магазин",
-		"price": 50000
+		"price": 50000,
+		"checked": false
 	},
 	{
 		"id": "6",
 		"type": "услуга",
 		"name": "SEO-оптимизация",
-		"price": 10000
+		"price": 10000,
+		"checked": false
 	},
 	{
 		"id": "7",
 		"type": "услуга",
 		"name": "Продвижение в Яндекс.Директ",
-		"price": 10000
+		"price": 10000,
+		"checked": false
 	},
 	{
 		"id": "8",
 		"type": "услуга",
 		"name": "Техническое обслуживание сайта на год",
-		"price": 5000
+		"price": 5000,
+		"checked": false
 	}
 ]

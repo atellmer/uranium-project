@@ -5,21 +5,15 @@
 			<div class="input-container">
 				<label class="form-label form-label--input">Какой проект Вам необходим?</label>
 				<md-input-container class="md-block">
-					<md-select placeholder="Выбрать..." ng-model="type" ng-change="calculate()" required>
+					<md-select placeholder="Выбрать..." ng-model="select" ng-change="calculate()" required>
 						<md-option ng-repeat="project in projects track by $index" value="{{::$index}}">{{::project.name}}</md-option>
 					</md-select>
 				</md-input-container>
 			</div>
 			<div class="chekbox-container" layout="column">
 				<label class="form-label form-label--chekbox">Дополнительные услуги:</label>
-				<md-checkbox ng-model="service.cb1" ng-change="calculate()" aria-label="SEO">
-					SEO-оптимизация
-				</md-checkbox>
-				<md-checkbox ng-model="service.cb2" ng-change="calculate()" aria-label="Yandex.Direct">
-					Продвижение в Яндекс.Директ
-				</md-checkbox>
-				<md-checkbox ng-model="service.cb3" ng-change="calculate()" aria-label="Service">
-					Техническое обслуживание сайта на год
+				<md-checkbox ng-repeat="service in services" ng-model="service.checked" ng-change="calculate()" aria-label="Service">
+					{{::service.name}}
 				</md-checkbox>
 			</div>
 			<div class="calculation">

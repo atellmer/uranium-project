@@ -5,9 +5,9 @@
 		.module('app')
 		.controller('OrderCtrl', OrderCtrl);
 
-	OrderCtrl.$inject = ['$scope', '$http', '$mdDialog'];
+	OrderCtrl.$inject = ['$scope', '$http', '$mdDialog', 'lkStore'];
 
-	function OrderCtrl($scope, $http, $mdDialog) {
+	function OrderCtrl($scope, $http, $mdDialog, lkStore) {
 		var projects = [];
 		var services = [];
 		var path = '../app/models/prices.model.json';
@@ -26,42 +26,62 @@
 					k++;
 				}
 			}
+			$scope.projects = projects;
+			$scope.services = services;
 		});
 
-		$scope.projects = projects;
-		$scope.services = services;
-		$scope.type = false;
 		$scope.cost = 0;
-
-		$scope.service = {
-			cb1: false,
-			cb2: false,
-			cb3: false
-		};
 
 		$scope.calculate = function () {
 			return calculate();
-		};
+		}
 
 		$scope.showDialog = function (ev) {
 			return showDialog(ev);
-		};
+		}
+
 
 		function calculate() {
 			$scope.cost = 0;
-			if ($scope.type) {
-				$scope.cost += projects[$scope.type].price;
+
+			if ($scope.select) {
+				$scope.cost += $scope.projects[$scope.select].price;
+
+				lkStore.project = $scope.projects[$scope.select].name;
 			}
-			if ($scope.service) {
-				if ($scope.service.cb1) {
-					$scope.cost += services[0].price;
+
+			for (var i = 0; i < $scope.services.length; i++) {
+				if ($scope.services[i].checked) {
+					$scope.cost += $scope.services[i].price;
+
+					if (lkStore.services.length === 0) {
+						lkStore.services.push($scope.services[i].name);
+					}
+
+					if (filter(lkStore.services, $scope.services[i].name)) {
+						lkStore.services.push($scope.services[i].name);
+					}
+				} else {
+					for (var j = 0; j < lkStore.services.length; j++) {
+						if (lkStore.services[j] === $scope.services[i].name) {
+							lkStore.services.splice(j, 1);
+						}
+					}
 				}
-				if ($scope.service.cb2) {
-					$scope.cost += services[1].price;
-				}
-				if ($scope.service.cb3) {
-					$scope.cost += services[2].price;
-				}
+			}
+
+			lkStore.cost = $scope.cost;
+		}
+
+		function filter(array, row) {
+			var sum = 0;
+			for (var i = 0; i < array.length; i++) {
+				sum += array[i].indexOf(row) + 1;
+			}
+			if (sum === 0) {
+				return true;
+			} else {
+				return false;
 			}
 		}
 
