@@ -2,5 +2,5 @@
 (function () {
 	'use strict';
 	angular
-		.module('app', ['ui.router', 'ngMaterial', 'hmTouchEvents', 'ngSanitize']);
+		.module('app', ['ui.router', 'ngMaterial', 'hmTouchEvents', 'ngSanitize', 'valdr']);
 })();

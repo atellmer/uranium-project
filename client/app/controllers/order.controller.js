@@ -40,7 +40,6 @@
 			return showDialog(ev);
 		}
 
-
 		function calculate() {
 			$scope.cost = 0;
 

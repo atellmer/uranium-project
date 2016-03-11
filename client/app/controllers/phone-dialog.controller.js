@@ -7,15 +7,16 @@
 		.module('app')
 		.controller('PhoneDialogCtrl', PhoneDialogCtrl);
 
-	PhoneDialogCtrl.$inject = ['$scope', '$sanitize', '$mdDialog'];
+	PhoneDialogCtrl.$inject = ['$scope', '$http', '$sanitize', '$mdDialog', '$mdToast'];
 
-	function PhoneDialogCtrl($scope, $sanitize, $mdDialog) {
-		var user = {
-			name: '',
-			phone: ''
-		};
+	function PhoneDialogCtrl($scope, $http, $sanitize, $mdDialog, $mdToast) {
+		var data = {
+				name: '',
+				phone: ''
+			},
+			toast = angular.element(document.querySelector('#toast'));
 
-		$scope.user = user;
+		$scope.data = data;
 
 		$scope.cancel = function () {
 			$mdDialog.cancel();
@@ -26,11 +27,22 @@
 		}
 
 		function send() {
-			user.name = $sanitize($scope.user.name);
-			user.phone = $sanitize($scope.user.phone);
+			data.name = $sanitize($scope.data.name);
+			data.phone = $sanitize($scope.data.phone);
 
-			console.log(user.name);
-			console.log(user.phone);
+			data = JSON.stringify(data);
+
+			$http.post('/phone', data).success(function (response) {
+				console.log('успех', response);
+			});
+
+			$mdToast.show(
+				$mdToast.simple()
+				.textContent('Ок! Мы вам перезвоним!')
+				.position('bottom left')
+				.hideDelay(5000)
+				.parent(toast)
+			);
 
 			$mdDialog.cancel();
 		}
