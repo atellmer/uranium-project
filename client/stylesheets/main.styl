@@ -1,4 +1,6 @@
 @import 'nib'
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,700,500,100&subset=latin,cyrillic,cyrillic-ext)
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700&subset=latin,cyrillic) 
 
 //material colors
 $dark-primary-color = #512DA8;
@@ -47,7 +49,7 @@ html
 	
 body
 	background $bg-color
-	font-family 'Roboto'
+	font-family 'Roboto', sans-serif
 	font-smoothing antialiased
 	overflow-scrolling touch
 
@@ -500,7 +502,7 @@ md-toast
 			.portfolio-item__btn
 				display block
 				
-	@media screen and (max-width: 768px)
+	@media screen and (max-width: 992px)
 		.portfolio-item__btn--mobile
 			display block
 		
@@ -691,11 +693,8 @@ md-toast
 .powered-by__logo
 	width 100px
 	height 43.25px
-	//width 236.796px
-	//height 38.598px
 	margin 10px auto
 	background-image url(../../img/angular-laravel.png)
-	//background-image url(../../img/powered-by.png)
 	background-position center
 	background-size cover
 	background-repeat no-repeat

@@ -8,7 +8,7 @@
 	configurator.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', 'valdrProvider'];
 
 	function configurator($stateProvider, $urlRouterProvider, $locationProvider, valdrProvider) {
-		//$locationProvider.html5Mode(true);
+		$locationProvider.html5Mode(true);
 
 		$urlRouterProvider.otherwise('/');
 
